@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [53.1.0-bb.2] - 2023-06-06
+### Changed
+- Updated gluon to 0.4.1 and Cypress to 13.x
+- Refactored cypress tests to remove explicit waits
+
 ## [53.1.0-bb.1] - 2023-06-06
 ### Changed
 - Updated crane to v0.15.2
