@@ -2,10 +2,10 @@
 
 The below details the steps required to update to a new version of the Nexus package.
 
-1. Read release notes from upstream [Nexus Releases](https://help.sonatype.com/repomanager3/product-information/release-notes). Be aware of changes that are included in the upgrade. Take note of any manual upgrade steps that customers might need to perform, if any.
-1. Do diff of [upstream chart](https://github.com/sonatype/helm3-charts/tree/nexus-repository-manager-40.1.0/charts/nexus-repository-manager) between old and new release tags to become aware of any significant chart changes. A graphical diff tool such as [Meld](https://meldmerge.org/) is useful. You can see where the current helm chart came from by inspecting ```/chart/kptfile```
+# Note, Nexus does not track an upstream Helm Chart repository. We maintain this chart ourselves. The upstream chart was archived/no longer supported.
+
 1. Create a development branch and merge request from the Gitlab issue.
-1. Merge/Sync the new helm chart with the existing Nexus package code. A graphical diff tool like [Meld](https://meldmerge.org/) is useful. Reference the "Modifications made to upstream chart" section below. Be careful not to overwrite Big Bang Package changes that need to be kept. Note that some files will have combinations of changes that you will overwrite and changes that you keep. Stay alert. The hardest file to update is the ```/chart/values.yaml``` because the changes are many and complicated.
+
 1. In `chart/Chart.yaml` update gluon to the latest version and run `helm dependency update chart` from the top level of the repo to package it up.
 1. Modify the `image.tag` value in `chart/values.yaml` to point to the newest version of Nexus.
 1. Update `chart/Chart.yaml` to the appropriate versions. The annotation version should match the ```appVersion```.
