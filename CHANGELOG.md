@@ -1,6 +1,13 @@
 # Changelog
 
 ---
+
+## [53.1.0-bb.3] - 2023-10-02
+### Changed
+- Updated chart to version: 53.1.0-bb.2 | appVersion: 3.53.1
+- Updated docs to reflect new chart versioning and maintenance
+- Removed kptfile from chart
+
 ## [53.1.0-bb.2] - 2023-06-06
 ### Changed
 - Updated gluon to 0.4.1 and Cypress to 13.x
