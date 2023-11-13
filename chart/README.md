@@ -1,236 +1,222 @@
-<!--
+# nexus-repository-manager
 
-    Sonatype Nexus (TM) Open Source Version
-    Copyright (c) 2008-present Sonatype, Inc.
-    All rights reserved. Includes the third-party code listed at http://links.sonatype.com/products/nexus/oss/attributions.
+![Version: 61.0.0-bb.1](https://img.shields.io/badge/Version-61.0.0--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.61.0](https://img.shields.io/badge/AppVersion-3.61.0-informational?style=flat-square)
 
-    This program and the accompanying materials are made available under the terms of the Eclipse Public License Version 1.0,
-    which accompanies this distribution and is available at http://www.eclipse.org/legal/epl-v10.html.
+Sonatype Nexus Repository Manager - Universal Binary repository
 
-    Sonatype Nexus (TM) Professional Version is available from Sonatype, Inc. "Sonatype" and "Sonatype Nexus" are trademarks
-    of Sonatype, Inc. Apache Maven is a trademark of the Apache Software Foundation. M2eclipse is a trademark of the
-    Eclipse Foundation. All other trademarks are the property of their respective owners.
+## Upstream References
+* <https://www.sonatype.com/nexus-repository-oss>
 
--->
-# ⚠️ Archive Notice
+* <https://github.com/sonatype/nexus-public>
 
-As of October 24, 2023, we will no longer update or support this Helm chart.
+## Learn More
+* [Application Overview](docs/overview.md)
+* [Other Documentation](docs/)
 
-Deploying Nexus Repository in containers with an embedded database has been known to corrupt the database under some circumstances. We strongly recommend that you use an external PostgreSQL database for Kubernetes deployments. 
+## Pre-Requisites
 
-If you are deploying in AWS, you can use our [AWS Helm chart](https://github.com/sonatype/nxrm3-helm-repository/tree/main/nxrm-aws-resiliency) to deploy Nexus Repository in an EKS cluster.
+* Kubernetes Cluster deployed
+* Kubernetes config installed in `~/.kube/config`
+* Helm installed
 
-We do not currently provide Helm charts for on-premises deployments using PostgreSQL. For those wishing to deploy on premises, see our [Single Data Center On-Premises Deployment Example Using Kubernetes documentation](https://help.sonatype.com/repomanager3/planning-your-implementation/resiliency-and-high-availability/single-data-center-on-premises-deployment-example-using-kubernetes) for information and sample YAMLs to help you plan a resilient on-premises deployment.
+Install Helm
 
-# Nexus Repository
+https://helm.sh/docs/intro/install/
 
-[Nexus Repository OSS](https://www.sonatype.com/nexus-repository-oss) provides universal support for all major build tools.
+## Deployment
 
-- Store and distribute Maven/Java, npm, NuGet, Helm, Docker, p2, OBR, APT, Go, R, Conan components and more.
-- Manage components from dev through delivery: binaries, containers, assemblies, and finished goods.
-- Support for the Java Virtual Machine (JVM) ecosystem, including Gradle, Ant, Maven, and Ivy.
-- Compatible with popular tools like Eclipse, IntelliJ, Hudson, Jenkins, Puppet, Chef, Docker, and more.
-
-*Efficiency and Flexibility to Empower Development Teams*
-
-- Streamline productivity by sharing components internally.
-- Gain insight into component security, license, and quality issues.
-- Build off-line with remote package availability.
-- Integrate with industry-leading build tools.
----
-
-## Introduction
-
-This chart installs a single Nexus Repository instance within a Kubernetes cluster that has a single node (server) configured. It is not appropriate for a resilient Nexus Repository deployment. Refer to our [resiliency documentation](https://help.sonatype.com/repomanager3/planning-your-implementation/resiliency-and-high-availability) for information about resilient Nexus Repository deployment options.
-
-Use the checklist below to determine if this Helm chart is suitable for your deployment needs.
-
-### When to Use This Helm Chart
-Use this Helm chart if you are doing any of the following:
-- Deploying either Nexus Repository Pro or OSS to an on-premises environment with bare metal/VM server (Node)
-- Deploying a single Nexus Repository instance within a Kubernetes cluster that has a single Node configured
-
-> **Note**: If you are using Nexus Repository Pro, your license file and embedded database will reside on the node and be mounted on the container as a Persistent Volume (required).
-
-
-### When Not to Use This Helm Chart
-Do not use this Helm chart and, instead, refer to our [resiliency documentation](https://help.sonatype.com/repomanager3/planning-your-implementation/resiliency-and-high-availability) if you are doing any of the following:
-
-- Deploying Nexus Repository Pro to a cloud environment with the desire for automatic failover across Availability Zones (AZs) within a single region
-- Planning to configure a single Nexus Repository Pro instance within your Kubernetes/EKS cluster with two or more nodes spread across different AZs within an AWS region
-- Using an external PostgreSQL database
-
-> **Note**: A Nexus Repository Pro license is required for our resilient deployment options. Your Nexus Repository Pro license file must be stored externally as either mounted from AWS Secrets/Azure Key Vault in AWS/Azure deployments or mounted using Kustomize for on-premises deployments (required).
-
-> **Note**: We do not currently provide Helm charts for our resilient deployment options.
-
----
-
-## Prerequisites for This Chart
-
-- Kubernetes 1.19+
-- PV provisioner support in the underlying infrastructure
-- Helm 3
-
-### With Open Docker Image
-
-By default, this Chart uses Sonatype's Public Docker image. If you want to use a different image, run with the following: `--set nexus.imageName=<my>/<image>`.
-
-## Adding the Sonatype Repository to your Helm
-
-To add as a Helm Repo
-```helm repo add sonatype https://sonatype.github.io/helm3-charts/```
-
----
-
-## Testing the Chart
-To test the chart, use the following:
+* Clone down the repository
+* cd into directory
 ```bash
-$ helm install --dry-run --debug --generate-name ./
-```
-To test the chart with your own values, use the following:
-```bash
-$ helm install --dry-run --debug --generate-name -f myvalues.yaml ./ 
+helm install nexus-repository-manager chart/
 ```
 
----
+## Values
 
-## Installing the Chart
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| hostname | string | `"nexus"` | Big Bang Additions |
+| domain | string | `"bigbang.dev"` |  |
+| istio.enabled | bool | `false` |  |
+| istio.injection | string | `"disabled"` |  |
+| istio.nexus.gateways[0] | string | `"istio-system/main"` |  |
+| istio.nexus.hosts[0] | string | `"{{ .Values.hostname }}.{{ .Values.domain }}"` |  |
+| istio.mtls.mode | string | `"STRICT"` |  |
+| networkPolicies.enabled | bool | `false` |  |
+| networkPolicies.ingressLabels.app | string | `"istio-ingressgateway"` |  |
+| networkPolicies.ingressLabels.istio | string | `"ingressgateway"` |  |
+| custom_admin_password | string | `""` |  |
+| custom_metrics_password | string | `""` |  |
+| monitoring.enabled | bool | `false` |  |
+| monitoring.serviceMonitor.createMetricsUser | bool | `false` |  |
+| monitoring.serviceMonitor.additionalLabels | object | `{}` |  |
+| monitoring.serviceMonitor.scheme | string | `"http"` |  |
+| license_key | string | `""` |  |
+| license.mountPath | string | `"/nexus-data/sonatype-license.lic"` |  |
+| license.subPath | string | `"sonatype-license.lic"` |  |
+| sso.enabled | bool | `false` |  |
+| sso.idp_data.entityId | string | `""` |  |
+| sso.idp_data.usernameAttribute | string | `""` |  |
+| sso.idp_data.firstNameAttribute | string | `""` |  |
+| sso.idp_data.lastNameAttribute | string | `""` |  |
+| sso.idp_data.emailAttribute | string | `""` |  |
+| sso.idp_data.groupsAttribute | string | `""` |  |
+| sso.idp_data.validateResponseSignature | bool | `true` |  |
+| sso.idp_data.validateAssertionSignature | bool | `true` |  |
+| sso.idp_data.idpMetadata | string | `""` |  |
+| sso.realm[0] | string | `"NexusAuthenticatingRealm"` |  |
+| sso.realm[1] | string | `"SamlRealm"` |  |
+| sso.role[0].id | string | `"nexus"` |  |
+| sso.role[0].name | string | `"nexus"` |  |
+| sso.role[0].description | string | `"nexus group"` |  |
+| sso.role[0].privileges[0] | string | `"nx-all"` |  |
+| sso.role[0].roles[0] | string | `"nx-admin"` |  |
+| proxy.enabled | bool | `false` |  |
+| proxy.request.tid | int | `1` |  |
+| proxy.request.action | string | `"coreui_HttpSettings"` |  |
+| proxy.request.method | string | `"update"` |  |
+| proxy.request.type | string | `"rpc"` |  |
+| proxy.request.data[0].userAgentSuffix | string | `nil` |  |
+| proxy.request.data[0].timeout | string | `nil` |  |
+| proxy.request.data[0].retries | string | `nil` |  |
+| proxy.request.data[0].httpEnabled | bool | `false` |  |
+| proxy.request.data[0].httpHost | string | `nil` |  |
+| proxy.request.data[0].httpPort | string | `nil` |  |
+| proxy.request.data[0].httpAuthEnabled | string | `nil` |  |
+| proxy.request.data[0].httpAuthUsername | string | `nil` |  |
+| proxy.request.data[0].httpAuthPassword | string | `nil` |  |
+| proxy.request.data[0].httpAuthNtlmHost | string | `nil` |  |
+| proxy.request.data[0].httpAuthNtlmDomain | string | `nil` |  |
+| proxy.request.data[0].httpsEnabled | bool | `false` |  |
+| proxy.request.data[0].httpsHost | string | `nil` |  |
+| proxy.request.data[0].httpsPort | string | `nil` |  |
+| proxy.request.data[0].httpsAuthEnabled | string | `nil` |  |
+| proxy.request.data[0].httpsAuthUsername | string | `nil` |  |
+| proxy.request.data[0].httpsAuthPassword | string | `nil` |  |
+| proxy.request.data[0].httpsAuthNtlmHost | string | `nil` |  |
+| proxy.request.data[0].httpsAuthNtlmDomain | string | `nil` |  |
+| proxy.request.data[0].nonProxyHosts | list | `[]` |  |
+| job_image.repository | string | `"registry1.dso.mil/ironbank/redhat/ubi/ubi8-minimal"` |  |
+| job_image.tag | float | `8.8` |  |
+| job_image.pullPolicy | string | `"IfNotPresent"` |  |
+| openshift | bool | `false` |  |
+| bbtests.enabled | bool | `false` |  |
+| bbtests.cypress.artifacts | bool | `true` |  |
+| bbtests.cypress.envs.cypress_nexus_url | string | `"http://nexus-nexus-repository-manager:8081"` |  |
+| bbtests.cypress.envs.cypress_nexus_user | string | `"admin"` |  |
+| bbtests.cypress.secretEnvs[0].name | string | `"cypress_nexus_pass"` |  |
+| bbtests.cypress.secretEnvs[0].valueFrom.secretKeyRef.name | string | `"nexus-repository-manager-secret"` |  |
+| bbtests.cypress.secretEnvs[0].valueFrom.secretKeyRef.key | string | `"admin.password"` |  |
+| bbtests.scripts.image | string | `"registry1.dso.mil/ironbank/google/go-containerregistry/crane:v0.15.2"` |  |
+| bbtests.scripts.envs.docker_host | string | `"nexus-nexus-repository-manager-docker-5000:5000"` |  |
+| bbtests.scripts.envs.docker_user | string | `"admin"` |  |
+| bbtests.scripts.secretEnvs[0].name | string | `"docker_password"` |  |
+| bbtests.scripts.secretEnvs[0].valueFrom.secretKeyRef.name | string | `"nexus-repository-manager-secret"` |  |
+| bbtests.scripts.secretEnvs[0].valueFrom.secretKeyRef.key | string | `"admin.password"` |  |
+| statefulset | object | `{"enabled":false}` | End of BigBang Additions |
+| deploymentStrategy | string | `"Recreate"` |  |
+| image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
+| image.tag | string | `"3.61.0-02"` |  |
+| image.pullPolicy | string | `"IfNotPresent"` |  |
+| imagePullSecrets[0].name | string | `"private-registry"` |  |
+| nexus.affinity | object | `{}` |  |
+| nexus.extraLabels.app | string | `"nexus-repository-manager"` |  |
+| nexus.blobstores.enabled | bool | `false` |  |
+| nexus.blobstores.blobstore[0].name | string | `"test-nexus-blobstore"` |  |
+| nexus.blobstores.blobstore[0].type | string | `"s3"` |  |
+| nexus.blobstores.blobstore[0].blobstore_data.name | string | `"test-nexus-blobstore"` |  |
+| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.region | string | `"your-bucket-region"` |  |
+| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.name | string | `"your-bucket-name"` |  |
+| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.prefix | string | `""` |  |
+| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.expiration | int | `3` |  |
+| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.accessKeyId | string | `"string"` |  |
+| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.secretAccessKey | string | `"string"` |  |
+| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.role | string | `"string"` |  |
+| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.sessionToken | string | `"string"` |  |
+| nexus.repository.enabled | bool | `false` |  |
+| nexus.repository.repo[0].name | string | `"test-nexus"` |  |
+| nexus.repository.repo[0].format | string | `"raw"` |  |
+| nexus.repository.repo[0].type | string | `"hosted"` |  |
+| nexus.repository.repo[0].repo_data.name | string | `"test-nexus"` |  |
+| nexus.repository.repo[0].repo_data.online | bool | `true` |  |
+| nexus.repository.repo[0].repo_data.storage.blobStoreName | string | `"default"` |  |
+| nexus.repository.repo[0].repo_data.storage.strictContentTypeValidation | bool | `true` |  |
+| nexus.repository.repo[0].repo_data.storage.writePolicy | string | `"allow_once"` |  |
+| nexus.repository.repo[0].repo_data.cleanup.policyNames[0] | string | `"string"` |  |
+| nexus.repository.repo[0].repo_data.component.proprietaryComponents | bool | `true` |  |
+| nexus.repository.repo[0].repo_data.raw.contentDisposition | string | `"ATTACHMENT"` |  |
+| nexus.docker.enabled | bool | `false` |  |
+| nexus.env[0].name | string | `"INSTALL4J_ADD_VM_PARAMS"` |  |
+| nexus.env[0].value | string | `"-Dcom.redhat.fips=false -Xms2703M -Xmx2703M -XX:MaxDirectMemorySize=2703M -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Djava.util.prefs.userRoot=/nexus-data/javaprefs"` |  |
+| nexus.env[1].name | string | `"NEXUS_SECURITY_RANDOMPASSWORD"` |  |
+| nexus.env[1].value | string | `"true"` |  |
+| nexus.properties.override | bool | `false` |  |
+| nexus.properties.data | object | `{}` |  |
+| nexus.resources.requests.cpu | int | `4` |  |
+| nexus.resources.requests.memory | string | `"8Gi"` |  |
+| nexus.resources.limits.cpu | int | `4` |  |
+| nexus.resources.limits.memory | string | `"8Gi"` |  |
+| nexus.nexusPort | int | `8081` |  |
+| nexus.securityContext.runAsNonRoot | bool | `true` |  |
+| nexus.securityContext.fsGroup | int | `2000` |  |
+| nexus.securityContext.runAsUser | int | `200` |  |
+| nexus.securityContext.runAsGroup | int | `2000` |  |
+| nexus.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| nexus.podAnnotations | object | `{}` |  |
+| nexus.livenessProbe.initialDelaySeconds | int | `30` |  |
+| nexus.livenessProbe.periodSeconds | int | `30` |  |
+| nexus.livenessProbe.failureThreshold | int | `6` |  |
+| nexus.livenessProbe.timeoutSeconds | int | `10` |  |
+| nexus.livenessProbe.path | string | `"/"` |  |
+| nexus.readinessProbe.initialDelaySeconds | int | `30` |  |
+| nexus.readinessProbe.periodSeconds | int | `30` |  |
+| nexus.readinessProbe.failureThreshold | int | `6` |  |
+| nexus.readinessProbe.timeoutSeconds | int | `10` |  |
+| nexus.readinessProbe.path | string | `"/"` |  |
+| nexus.hostAliases | list | `[]` |  |
+| nameOverride | string | `""` |  |
+| fullnameOverride | string | `""` |  |
+| deployment.annotations | object | `{}` |  |
+| deployment.initContainers | string | `nil` |  |
+| deployment.postStart.command | string | `nil` |  |
+| deployment.preStart.command | string | `nil` |  |
+| deployment.terminationGracePeriodSeconds | int | `120` |  |
+| deployment.additionalContainers | string | `nil` |  |
+| deployment.additionalVolumes | string | `nil` |  |
+| deployment.additionalVolumeMounts | string | `nil` |  |
+| ingress.enabled | bool | `false` |  |
+| ingress.ingressClassName | string | `"nginx"` |  |
+| ingress.annotations."nginx.ingress.kubernetes.io/proxy-body-size" | string | `"0"` |  |
+| ingress.hostPath | string | `"/"` |  |
+| ingress.hostRepo | string | `"repo.demo"` |  |
+| service.name | string | `"nexus3"` |  |
+| service.enabled | bool | `true` |  |
+| service.labels | object | `{}` |  |
+| service.annotations | object | `{}` |  |
+| service.type | string | `"ClusterIP"` |  |
+| route.enabled | bool | `false` |  |
+| route.name | string | `"docker"` |  |
+| route.portName | string | `"docker"` |  |
+| route.labels | string | `nil` |  |
+| route.annotations | string | `nil` |  |
+| nexusProxyRoute.enabled | bool | `false` |  |
+| nexusProxyRoute.labels | string | `nil` |  |
+| nexusProxyRoute.annotations | string | `nil` |  |
+| persistence.enabled | bool | `true` |  |
+| persistence.accessMode | string | `"ReadWriteOnce"` |  |
+| persistence.storageSize | string | `"8Gi"` |  |
+| tolerations | list | `[]` |  |
+| config.enabled | bool | `false` |  |
+| config.mountPath | string | `"/sonatype-nexus-conf"` |  |
+| config.data | list | `[]` |  |
+| secret.enabled | bool | `true` |  |
+| secret.mountPath | string | `"/nexus-data/admin.password"` |  |
+| secret.subPath | string | `"admin.password"` |  |
+| secret.readOnly | bool | `true` |  |
+| serviceAccount.create | bool | `true` |  |
+| serviceAccount.annotations | object | `{}` |  |
+| serviceAccount.name | string | `""` |  |
 
-To install the chart, use the following:
+## Contributing
 
-```bash
-$ helm install nexus-rm sonatype/nexus-repository-manager [ --version v29.2.0 ]
-```
-
-The above command deploys Nexus Repository on the Kubernetes cluster in the default configuration.
-
-You can pass custom configuration values as follows:
-
-```bash
-$ helm install -f myvalues.yaml sonatype-nexus ./
-```
-
-The default login is randomized and can be found in `/nexus-data/admin.password` or you can get the initial static passwords (admin/admin123)
-by setting the environment variable `NEXUS_SECURITY_RANDOMPASSWORD` to `false` in your `values.yaml`.
- 
----
-
-## Uninstalling the Chart
-
-To uninstall/delete the deployment, use the following:
-
-```bash
-$ helm list
-NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                           APP VERSION
-plinking-gopher         default         1               2021-03-10 15:44:57.301847 -0800 PST    deployed        nexus-repository-manager-29.2.0 3.29.2     
-$ helm delete plinking-gopher
-```
-
-The command removes all the Kubernetes components associated with the chart and deletes the release.
-
----
-
-## Configuration
-
-The following table lists the configurable parameters of the Nexus chart and their default values.
-
-| Parameter                                  | Description                                                                                  | Default                                                                                                                                         |
-|--------------------------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| `deploymentStrategy`                       | Deployment Strategy                                                                          | `Recreate`                                                                                                                                      |
-| `nexus.imagePullPolicy`                    | Nexus Repository image pull policy                                                           | `IfNotPresent`                                                                                                                                  |
-| `imagePullSecrets`                         | The names of the kubernetes secrets with credentials to login to a registry                  | `[]`                                                                                                                                            |
-| `nexus.docker.enabled`                     | Enable/disable Docker support                                                                | `false`                                                                                                                                         |
-| `nexus.docker.registries`                  | Support multiple Docker registries                                                           | (see below)                                                                                                                                     |
-| `nexus.docker.registries[0].host`          | Host for the Docker registry                                                                 | `cluster.local`                                                                                                                                 |
-| `nexus.docker.registries[0].port`          | Port for the Docker registry                                                                 | `5000`                                                                                                                                          |
-| `nexus.docker.registries[0].secretName`    | TLS Secret Name for the ingress                                                              | `registrySecret`                                                                                                                                |
-| `nexus.env`                                | Nexus Repository environment variables                                                       | `[{INSTALL4J_ADD_VM_PARAMS: -Xms1200M -Xmx1200M -XX:MaxDirectMemorySize=2G -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap}]` |
-| `nexus.resources`                          | Nexus Repository resource requests and limits                                                | `{}`                                                                                                                                            |
-| `nexus.nexusPort`                          | Internal port for Nexus Repository service                                                   | `8081`                                                                                                                                          |
-| `nexus.securityContext`                    | Security Context (for enabling official image use `fsGroup: 2000`)                           | `{}`                                                                                                                                            |
-| `nexus.labels`                             | Service labels                                                                               | `{}`                                                                                                                                            |
-| `nexus.podAnnotations`                     | Pod Annotations                                                                              | `{}`                                                                                                                                            |
-| `nexus.livenessProbe.initialDelaySeconds`  | LivenessProbe initial delay                                                                  | 30                                                                                                                                              |
-| `nexus.livenessProbe.periodSeconds`        | Seconds between polls                                                                        | 30                                                                                                                                              |
-| `nexus.livenessProbe.failureThreshold`     | Number of attempts before failure                                                            | 6                                                                                                                                               |
-| `nexus.livenessProbe.timeoutSeconds`       | Time in seconds after liveness probe times out                                               | `nil`                                                                                                                                           |
-| `nexus.livenessProbe.path`                 | Path for LivenessProbe                                                                       | /                                                                                                                                               |
-| `nexus.readinessProbe.initialDelaySeconds` | ReadinessProbe initial delay                                                                 | 30                                                                                                                                              |
-| `nexus.readinessProbe.periodSeconds`       | Seconds between polls                                                                        | 30                                                                                                                                              |
-| `nexus.readinessProbe.failureThreshold`    | Number of attempts before failure                                                            | 6                                                                                                                                               |
-| `nexus.readinessProbe.timeoutSeconds`      | Time in seconds after readiness probe times out                                              | `nil`                                                                                                                                           |
-| `nexus.readinessProbe.path`                | Path for ReadinessProbe                                                                      | /                                                                                                                                               |
-| `nexus.hostAliases`                        | Aliases for IPs in /etc/hosts                                                                | []                                                                                                                                              |
-| `nexus.properties.override`                | Set to true to override default nexus.properties                                             | `false`                                                                                                                                         |
-| `nexus.properties.data`                    | A map of custom nexus properties if `override` is set to true                                | `nexus.scripts.allowCreation: true`                                                                                                             |
-| `ingress.enabled`                          | Create an ingress for Nexus Repository                                                       | `false`                                                                                                                                         |
-| `ingress.annotations`                      | Annotations to enhance ingress configuration                                                 | `{kubernetes.io/ingress.class: nginx}`                                                                                                          |
-| `ingress.tls.secretName`                   | Name of the secret storing TLS cert, `false` to use the Ingress' default certificate         | `nexus-tls`                                                                                                                                     |
-| `ingress.path`                             | Path for ingress rules. GCP users should set to `/*`.                                        | `/`                                                                                                                                             |
-| `tolerations`                              | tolerations list                                                                             | `[]`                                                                                                                                            |
-| `config.enabled`                           | Enable configmap                                                                             | `false`                                                                                                                                         |
-| `config.mountPath`                         | Path to mount the config                                                                     | `/sonatype-nexus-conf`                                                                                                                          |
-| `config.data`                              | Configmap data                                                                               | `nil`                                                                                                                                           |
-| `deployment.annotations`                   | Annotations to enhance deployment configuration                                              | `{}`                                                                                                                                            |
-| `deployment.initContainers`                | Init containers to run before main containers                                                | `nil`                                                                                                                                           |
-| `deployment.postStart.command`             | Command to run after starting the container                                                  | `nil`                                                                                                                                           |
-| `deployment.terminationGracePeriodSeconds` | Update termination grace period (in seconds)                                                 | 120s                                                                                                                                            |
-| `deployment.additionalContainers`          | Add additional Container                                                                     | `nil`                                                                                                                                           |
-| `deployment.additionalVolumes`             | Add additional Volumes                                                                       | `nil`                                                                                                                                           |
-| `deployment.additionalVolumeMounts`        | Add additional Volume mounts                                                                 | `nil`                                                                                                                                           |
-| `secret.enabled`                           | Enable secret                                                                                | `false`                                                                                                                                         |
-| `secret.mountPath`                         | Path to mount the secret                                                                     | `/etc/secret-volume`                                                                                                                            |
-| `secret.readOnly`                          | Secret readonly state                                                                        | `true`                                                                                                                                          |
-| `secret.data`                              | Secret data                                                                                  | `nil`                                                                                                                                           |
-| `service.enabled`                          | Enable additional service                                                                    | `true`                                                                                                                                          |
-| `service.name`                             | Service name                                                                                 | `nexus3`                                                                                                                                        |
-| `service.labels`                           | Service labels                                                                               | `nil`                                                                                                                                           |
-| `service.annotations`                      | Service annotations                                                                          | `nil`                                                                                                                                           |
-| `service.type`                             | Service Type                                                                                 | `ClusterIP`                                                                                                                                     |
-| `route.enabled`                            | Set to true to create route for additional service                                           | `false`                                                                                                                                         |
-| `route.name`                               | Name of route                                                                                | `docker`                                                                                                                                        |
-| `route.portName`                           | Target port name of service                                                                  | `docker`                                                                                                                                        |
-| `route.labels`                             | Labels to be added to route                                                                  | `{}`                                                                                                                                            |
-| `route.annotations`                        | Annotations to be added to route                                                             | `{}`                                                                                                                                            |
-| `route.path`                               | Host name of Route e.g. jenkins.example.com                                                  | nil                                                                                                                                             |
-| `serviceAccount.create`                    | Set to true to create ServiceAccount                                                         | `true`                                                                                                                                          |
-| `serviceAccount.annotations`               | Set annotations for ServiceAccount                                                           | `{}`                                                                                                                                            |
-| `serviceAccount.name`                      | The name of the service account to use. Auto-generate if not set and create is true.         | `{}`                                                                                                                                            |
-| `persistence.enabled`                      | Set false to eliminate persistent storage                                                    | `true`                                                                                                                                          |
-| `persistence.existingClaim`                | Specify the name of an existing persistent volume claim to use instead of creating a new one | nil                                                                                                                                             |
-| `persistence.storageSize`                  | Size of the storage the chart will request                                                   | `8Gi`                                                                                                                                           |
-
-### Persistence
-
-By default, a `PersistentVolumeClaim` is created and mounted into the `/nexus-data` directory. In order to disable this functionality, you can change the `values.yaml` to disable persistence, which will use an `emptyDir` instead.
-
-> *"An emptyDir volume is first created when a Pod is assigned to a Node, and exists as long as that Pod is running on that node. When a Pod is removed from a node for any reason, the data in the emptyDir is deleted forever."*
-
-## Using the Image from the Red Hat Registry
-
-To use the [Nexus Repository Manager image available from Red Hat's registry](https://catalog.redhat.com/software/containers/sonatype/nexus-repository-manager/594c281c1fbe9847af657690),
-you'll need to:
-* Load the credentials for the registry as a secret in your cluster
-  ```shell
-  kubectl create secret docker-registry redhat-pull-secret \
-    --docker-server=registry.connect.redhat.com \
-    --docker-username=<user_name> \
-    --docker-password=<password> \
-    --docker-email=<email>
-  ```
-  See Red Hat's [Registry Authentication documentation](https://access.redhat.com/RegistryAuthentication)
-  for further details.
-* Provide the name of the secret in `imagePullSecrets` in this chart's `values.yaml`
-  ```yaml
-  imagePullSecrets:
-    - name: redhat-pull-secret
-  ```
-* Set `image.name` and `image.tag` in `values.yaml`
-  ```yaml
-  image:
-    repository: registry.connect.redhat.com/sonatype/nexus-repository-server
-    tag: 3.39.0-ubi-1
-  ```
-
----
+Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing.
