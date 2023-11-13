@@ -1,6 +1,6 @@
 # nexus-repository-manager
 
-![Version: 61.0.0-bb.0](https://img.shields.io/badge/Version-61.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.61.0](https://img.shields.io/badge/AppVersion-3.61.0-informational?style=flat-square)
+![Version: 61.0.0-bb.1](https://img.shields.io/badge/Version-61.0.0--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.61.0](https://img.shields.io/badge/AppVersion-3.61.0-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -65,8 +65,7 @@ helm install nexus-repository-manager chart/
 | sso.idp_data.validateAssertionSignature | bool | `true` |  |
 | sso.idp_data.idpMetadata | string | `""` |  |
 | sso.realm[0] | string | `"NexusAuthenticatingRealm"` |  |
-| sso.realm[1] | string | `"NexusAuthorizingRealm"` |  |
-| sso.realm[2] | string | `"SamlRealm"` |  |
+| sso.realm[1] | string | `"SamlRealm"` |  |
 | sso.role[0].id | string | `"nexus"` |  |
 | sso.role[0].name | string | `"nexus"` |  |
 | sso.role[0].description | string | `"nexus group"` |  |
