@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [62.0.0-bb.0] - 2023-11-20
+### Changed
+- Updated ubi8 from 8.8 to 8.9
+- Updated chart to version: 62.0.0-bb.0
+
 ## [61.0.0-bb.1] - 2023-11-13
 ### Changed
 - Updated chart to version: 61.0.0-bb.1
