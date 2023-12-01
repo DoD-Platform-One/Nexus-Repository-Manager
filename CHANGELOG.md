@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [62.0.0-bb.1] - 2023-11-29
+### Changed
+- registry1.dso.mil/ironbank/google/go-containerregistry/crane v0.15.2 -> v0.16.1
+
 ## [62.0.0-bb.0] - 2023-11-20
 ### Changed
 - Updated ubi8 from 8.8 to 8.9
