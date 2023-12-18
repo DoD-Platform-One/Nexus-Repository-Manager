@@ -93,8 +93,8 @@ proxy:
       nonProxyHosts: []
 
 job_image:
-  repository: registry1.dso.mil/ironbank/redhat/ubi/ubi8-minimal
-  tag: 8.9
+  repository: registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal
+  tag: 9.3 
   pullPolicy: IfNotPresent
 
 openshift: false

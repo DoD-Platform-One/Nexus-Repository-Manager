@@ -3,7 +3,7 @@ name: nexus-repository-manager
 
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
-version: 62.0.0-bb.1
+version: 62.0.0-bb.2
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application.
 appVersion: 3.62.0
@@ -48,5 +48,5 @@ annotations:
   helm.sh/images: |
     - name: nexus
       image: registry1.dso.mil/ironbank/sonatype/nexus/nexus:3.62.0-01
-    - name: ubi8-minimal
-      image: registry1.dso.mil/ironbank/redhat/ubi/ubi8-minimal:8.9
+    - name: ubi9-minimal
+      image: registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal:9.3
