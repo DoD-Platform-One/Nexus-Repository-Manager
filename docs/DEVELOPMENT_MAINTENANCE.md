@@ -36,7 +36,7 @@ clusterAuditor:
 gatekeeper:
   enabled: false
 
-istiooperator:
+istioOperator:
   enabled: true
 
 istio:
@@ -48,10 +48,7 @@ jaeger:
 kiali:
   enabled: false
 
-logging:
-  enabled: false
-
-eckoperator:
+eckOperator:
   enabled: false
 
 fluentbit:
@@ -60,11 +57,14 @@ fluentbit:
 monitoring:
   enabled: true
 
+neuvector:
+  enabled: false
+
 twistlock:
   enabled: false
 
 addons:
-  nexus:
+  nexusRepositoryManager:
     enabled: true
     git:
       tag: null
