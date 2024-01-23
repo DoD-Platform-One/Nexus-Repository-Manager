@@ -27,7 +27,7 @@ Big Bang has added several CaC (configuration as code) jobs to automate certain 
 
 ## Test Basic Functionality, Repo Job, and Monitoring
 
-Deploy with the following Big Bang override values to test the repo job and monitoring interaction:
+Deploy with the following Big Bang override values, in addition to (from the BB repo) ./docs/assets/configs/examples/policy-overrides-k3d.yaml, to test the repo job and monitoring interaction:
 
 ```yaml
 clusterAuditor:
