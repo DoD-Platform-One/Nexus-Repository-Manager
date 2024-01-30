@@ -23,7 +23,7 @@ The below details the steps required to update to a new version of the Nexus pac
 
 # How to test Nexus
 
-Big Bang has added several CaC (configuration as code) jobs to automate certain configurations that the upstream Nexus Helm chart does not support. Nexus upgrades could break the CaC jobs (which are not currently tested in CI). Note that you will need a license to test the SSO job. The CaC job for repo creation does not require a license. Big Bang has a license for development/testing purposes - you can request this license from one of the CODEOWNERS or reach out via the BB team channel.
+Big Bang has added several CaC (configuration as code) jobs to automate certain configurations that the upstream Nexus Helm chart does not support. Nexus upgrades could break the CaC jobs (which are not currently tested in CI). Note that you will need a license to test the SSO job. The CaC job for repo creation does not require a license. Big Bang has a license for development/testing purposes. Members of the Big Bang team can request this license from one of the CODEOWNERS or reach out via the BB team channel.
 
 ## Test Basic Functionality, Repo Job, and Monitoring
 
