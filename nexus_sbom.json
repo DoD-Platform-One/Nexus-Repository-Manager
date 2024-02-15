@@ -1,7 +1,7 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:cdfa8d95-79e6-4f4f-92a1-aa451f93bfd5",
+  "serialNumber": "urn:uuid:22f1ae8f-2900-4c99-89d3-28c84712daeb",
   "version": 1,
   "metadata": {
     "tools": null,
@@ -18954,6 +18954,7 @@
         },
         {
           "type": "operating-system",
+          "bom-ref": "registry1.dso.mil/ironbank/sonatype/nexus/nexus@3.64.0-03:os:rhel@8.9",
           "name": "rhel",
           "version": "8.9",
           "description": "Red Hat Enterprise Linux 8.9 (Ootpa)",
@@ -26756,6 +26757,7 @@
         },
         {
           "type": "operating-system",
+          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:os:rhel@9.3",
           "name": "rhel",
           "version": "9.3",
           "description": "Red Hat Enterprise Linux 9.3 (Plow)",
