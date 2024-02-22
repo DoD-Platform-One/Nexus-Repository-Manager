@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [65.0.0-bb.0] - 2024-02-19
+### Changed
+- Updated chart to version: 65.0.0-bb.0 | appVersion: 3.65.0-02
+- registry1.dso.mil/ironbank/google/go-containerregistry/crane v0.17.0 -> v0.19.0
+
 ## [64.0.0-bb.0] - 2024-01-12
 ### Changed
 - Updated chart to version: 64.0.0-bb.0 | appVersion: 3.64.0-03
