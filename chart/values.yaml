@@ -121,7 +121,7 @@ bbtests:
         memory: 2Gi
 
   scripts:
-    image: "registry1.dso.mil/ironbank/google/go-containerregistry/crane:v0.17.0"
+    image: "registry1.dso.mil/ironbank/google/go-containerregistry/crane:v0.19.0"
     envs:
       docker_host: "nexus-nexus-repository-manager-docker-5000:5000"
       docker_user: "admin"
@@ -141,7 +141,7 @@ deploymentStrategy: Recreate
 image:
   # IB Nexus Image
   repository: registry1.dso.mil/ironbank/sonatype/nexus/nexus
-  tag: 3.64.0-03
+  tag: 3.65.0-02
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: private-registry

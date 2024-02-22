@@ -1,6 +1,6 @@
 # nexus-repository-manager
 
-![Version: 64.0.0-bb.0](https://img.shields.io/badge/Version-64.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.64.0-03](https://img.shields.io/badge/AppVersion-3.64.0--03-informational?style=flat-square)
+![Version: 65.0.0-bb.0](https://img.shields.io/badge/Version-65.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.65.0-02](https://img.shields.io/badge/AppVersion-3.65.0--02-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -109,7 +109,7 @@ helm install nexus-repository-manager chart/
 | bbtests.cypress.secretEnvs[0].valueFrom.secretKeyRef.key | string | `"admin.password"` |  |
 | bbtests.cypress.resources.requests.cpu | int | `2` |  |
 | bbtests.cypress.resources.requests.memory | string | `"2Gi"` |  |
-| bbtests.scripts.image | string | `"registry1.dso.mil/ironbank/google/go-containerregistry/crane:v0.17.0"` |  |
+| bbtests.scripts.image | string | `"registry1.dso.mil/ironbank/google/go-containerregistry/crane:v0.19.0"` |  |
 | bbtests.scripts.envs.docker_host | string | `"nexus-nexus-repository-manager-docker-5000:5000"` |  |
 | bbtests.scripts.envs.docker_user | string | `"admin"` |  |
 | bbtests.scripts.secretEnvs[0].name | string | `"docker_password"` |  |
@@ -118,7 +118,7 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.64.0-03"` |  |
+| image.tag | string | `"3.65.0-02"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |
