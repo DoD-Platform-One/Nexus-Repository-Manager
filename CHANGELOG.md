@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [65.0.0-bb.1] - 2024-03-04
+### Changed
+- Openshift update for deploying Nexus into Openshift cluster
+
 ## [65.0.0-bb.0] - 2024-02-19
 ### Changed
 - Updated chart to version: 65.0.0-bb.0 | appVersion: 3.65.0-02
