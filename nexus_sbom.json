@@ -1,7 +1,7 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:3196bc67-4e64-4ba2-aba0-66fc77d9c949",
+  "serialNumber": "urn:uuid:0536adfd-219d-4917-b482-fd52dda4a6b6",
   "version": 1,
   "metadata": {
     "tools": null,
@@ -19187,7 +19187,7 @@
     },
     {
       "type": "container",
-      "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:a98089cfd0f287ef",
+      "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:a8ca1d3552d6004a",
       "name": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal",
       "version": "9.3",
       "components": [
@@ -19225,7 +19225,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19303,7 +19303,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19357,7 +19357,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19411,7 +19411,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19489,7 +19489,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19567,7 +19567,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19645,7 +19645,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19723,7 +19723,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19817,7 +19817,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19839,10 +19839,10 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/curl-minimal@7.76.1-26.el9_3.2?arch=x86_64\u0026upstream=curl-7.76.1-26.el9_3.2.src.rpm\u0026distro=rhel-9.3\u0026package-id=7f4df4ed1305cadd",
+          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/curl-minimal@7.76.1-26.el9_3.3?arch=x86_64\u0026upstream=curl-7.76.1-26.el9_3.3.src.rpm\u0026distro=rhel-9.3\u0026package-id=b6eb623d3102e81f",
           "publisher": "Red Hat, Inc.",
           "name": "curl-minimal",
-          "version": "7.76.1-26.el9_3.2",
+          "version": "7.76.1-26.el9_3.3",
           "licenses": [
             {
               "license": {
@@ -19850,8 +19850,8 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:curl-minimal:curl-minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/curl-minimal@7.76.1-26.el9_3.2?arch=x86_64\u0026upstream=curl-7.76.1-26.el9_3.2.src.rpm\u0026distro=rhel-9.3",
+          "cpe": "cpe:2.3:a:curl-minimal:curl-minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*",
+          "purl": "pkg:rpm/rhel/curl-minimal@7.76.1-26.el9_3.3?arch=x86_64\u0026upstream=curl-7.76.1-26.el9_3.3.src.rpm\u0026distro=rhel-9.3",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -19867,35 +19867,35 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:curl-minimal:curl_minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:curl-minimal:curl_minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:curl_minimal:curl-minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:curl_minimal:curl-minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:curl_minimal:curl_minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:curl_minimal:curl_minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:curl-minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:curl-minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:curl_minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:curl_minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:curl:curl-minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:curl:curl-minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:curl:curl_minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:curl:curl_minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -19903,7 +19903,7 @@
             },
             {
               "name": "syft:metadata:release",
-              "value": "26.el9_3.2"
+              "value": "26.el9_3.3"
             },
             {
               "name": "syft:metadata:size",
@@ -19911,7 +19911,7 @@
             },
             {
               "name": "syft:metadata:sourceRpm",
-              "value": "curl-7.76.1-26.el9_3.2.src.rpm"
+              "value": "curl-7.76.1-26.el9_3.3.src.rpm"
             }
           ]
         },
@@ -19989,7 +19989,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20083,7 +20083,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20161,7 +20161,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20215,7 +20215,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20293,7 +20293,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20347,7 +20347,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20425,7 +20425,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20483,7 +20483,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20561,7 +20561,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20619,7 +20619,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20641,10 +20641,10 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/glibc@2.34-83.el9_3.7?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.7.src.rpm\u0026distro=rhel-9.3\u0026package-id=3945a0a24cddaaa3",
+          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/glibc@2.34-83.el9_3.12?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.12.src.rpm\u0026distro=rhel-9.3\u0026package-id=7d58782a53dec526",
           "publisher": "Red Hat, Inc.",
           "name": "glibc",
-          "version": "2.34-83.el9_3.7",
+          "version": "2.34-83.el9_3.12",
           "licenses": [
             {
               "license": {
@@ -20652,8 +20652,8 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:redhat:glibc:2.34-83.el9_3.7:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/glibc@2.34-83.el9_3.7?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.7.src.rpm\u0026distro=rhel-9.3",
+          "cpe": "cpe:2.3:a:redhat:glibc:2.34-83.el9_3.12:*:*:*:*:*:*:*",
+          "purl": "pkg:rpm/rhel/glibc@2.34-83.el9_3.12?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.12.src.rpm\u0026distro=rhel-9.3",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -20669,11 +20669,11 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc:glibc:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc:glibc:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20681,24 +20681,24 @@
             },
             {
               "name": "syft:metadata:release",
-              "value": "83.el9_3.7"
+              "value": "83.el9_3.12"
             },
             {
               "name": "syft:metadata:size",
-              "value": "6207587"
+              "value": "6208339"
             },
             {
               "name": "syft:metadata:sourceRpm",
-              "value": "glibc-2.34-83.el9_3.7.src.rpm"
+              "value": "glibc-2.34-83.el9_3.12.src.rpm"
             }
           ]
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/glibc-common@2.34-83.el9_3.7?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.7.src.rpm\u0026distro=rhel-9.3\u0026package-id=e3fd36d4c9a6c91b",
+          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/glibc-common@2.34-83.el9_3.12?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.12.src.rpm\u0026distro=rhel-9.3\u0026package-id=7ea9810e24d2fba8",
           "publisher": "Red Hat, Inc.",
           "name": "glibc-common",
-          "version": "2.34-83.el9_3.7",
+          "version": "2.34-83.el9_3.12",
           "licenses": [
             {
               "license": {
@@ -20706,8 +20706,8 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:glibc-common:glibc-common:2.34-83.el9_3.7:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/glibc-common@2.34-83.el9_3.7?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.7.src.rpm\u0026distro=rhel-9.3",
+          "cpe": "cpe:2.3:a:glibc-common:glibc-common:2.34-83.el9_3.12:*:*:*:*:*:*:*",
+          "purl": "pkg:rpm/rhel/glibc-common@2.34-83.el9_3.12?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.12.src.rpm\u0026distro=rhel-9.3",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -20723,35 +20723,35 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc-common:glibc_common:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc-common:glibc_common:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_common:glibc-common:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc_common:glibc-common:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_common:glibc_common:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc_common:glibc_common:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:glibc-common:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:glibc-common:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:glibc_common:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:glibc_common:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc:glibc-common:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc:glibc-common:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc:glibc_common:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc:glibc_common:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20759,7 +20759,7 @@
             },
             {
               "name": "syft:metadata:release",
-              "value": "83.el9_3.7"
+              "value": "83.el9_3.12"
             },
             {
               "name": "syft:metadata:size",
@@ -20767,16 +20767,16 @@
             },
             {
               "name": "syft:metadata:sourceRpm",
-              "value": "glibc-2.34-83.el9_3.7.src.rpm"
+              "value": "glibc-2.34-83.el9_3.12.src.rpm"
             }
           ]
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/glibc-minimal-langpack@2.34-83.el9_3.7?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.7.src.rpm\u0026distro=rhel-9.3\u0026package-id=17b44dcd2e922217",
+          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/glibc-minimal-langpack@2.34-83.el9_3.12?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.12.src.rpm\u0026distro=rhel-9.3\u0026package-id=4888bbbcb802afdb",
           "publisher": "Red Hat, Inc.",
           "name": "glibc-minimal-langpack",
-          "version": "2.34-83.el9_3.7",
+          "version": "2.34-83.el9_3.12",
           "licenses": [
             {
               "license": {
@@ -20784,8 +20784,8 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:glibc-minimal-langpack:glibc-minimal-langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/glibc-minimal-langpack@2.34-83.el9_3.7?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.7.src.rpm\u0026distro=rhel-9.3",
+          "cpe": "cpe:2.3:a:glibc-minimal-langpack:glibc-minimal-langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*",
+          "purl": "pkg:rpm/rhel/glibc-minimal-langpack@2.34-83.el9_3.12?arch=x86_64\u0026upstream=glibc-2.34-83.el9_3.12.src.rpm\u0026distro=rhel-9.3",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -20801,51 +20801,51 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc-minimal-langpack:glibc_minimal_langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc-minimal-langpack:glibc_minimal_langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_minimal_langpack:glibc-minimal-langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc_minimal_langpack:glibc-minimal-langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_minimal_langpack:glibc_minimal_langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc_minimal_langpack:glibc_minimal_langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc-minimal:glibc-minimal-langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc-minimal:glibc-minimal-langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc-minimal:glibc_minimal_langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc-minimal:glibc_minimal_langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_minimal:glibc-minimal-langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc_minimal:glibc-minimal-langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_minimal:glibc_minimal_langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc_minimal:glibc_minimal_langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:glibc-minimal-langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:glibc-minimal-langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:glibc_minimal_langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:glibc_minimal_langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc:glibc-minimal-langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc:glibc-minimal-langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc:glibc_minimal_langpack:2.34-83.el9_3.7:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:glibc:glibc_minimal_langpack:2.34-83.el9_3.12:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20853,7 +20853,7 @@
             },
             {
               "name": "syft:metadata:release",
-              "value": "83.el9_3.7"
+              "value": "83.el9_3.12"
             },
             {
               "name": "syft:metadata:size",
@@ -20861,7 +20861,7 @@
             },
             {
               "name": "syft:metadata:sourceRpm",
-              "value": "glibc-2.34-83.el9_3.7.src.rpm"
+              "value": "glibc-2.34-83.el9_3.12.src.rpm"
             }
           ]
         },
@@ -20899,7 +20899,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -20957,7 +20957,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21011,7 +21011,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21089,7 +21089,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21167,7 +21167,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21245,7 +21245,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21314,7 +21314,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21379,7 +21379,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21429,7 +21429,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21483,7 +21483,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21561,7 +21561,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21639,7 +21639,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21717,7 +21717,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21795,7 +21795,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21889,7 +21889,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -21999,7 +21999,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22077,7 +22077,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22131,7 +22131,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22185,7 +22185,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22239,7 +22239,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22293,7 +22293,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22347,7 +22347,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22401,7 +22401,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22479,7 +22479,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22557,7 +22557,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22579,10 +22579,10 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/libcurl-minimal@7.76.1-26.el9_3.2?arch=x86_64\u0026upstream=curl-7.76.1-26.el9_3.2.src.rpm\u0026distro=rhel-9.3\u0026package-id=667787e0563ec2d1",
+          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/libcurl-minimal@7.76.1-26.el9_3.3?arch=x86_64\u0026upstream=curl-7.76.1-26.el9_3.3.src.rpm\u0026distro=rhel-9.3\u0026package-id=eb0e91b54268892a",
           "publisher": "Red Hat, Inc.",
           "name": "libcurl-minimal",
-          "version": "7.76.1-26.el9_3.2",
+          "version": "7.76.1-26.el9_3.3",
           "licenses": [
             {
               "license": {
@@ -22590,8 +22590,8 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:libcurl-minimal:libcurl-minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/libcurl-minimal@7.76.1-26.el9_3.2?arch=x86_64\u0026upstream=curl-7.76.1-26.el9_3.2.src.rpm\u0026distro=rhel-9.3",
+          "cpe": "cpe:2.3:a:libcurl-minimal:libcurl-minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*",
+          "purl": "pkg:rpm/rhel/libcurl-minimal@7.76.1-26.el9_3.3?arch=x86_64\u0026upstream=curl-7.76.1-26.el9_3.3.src.rpm\u0026distro=rhel-9.3",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -22607,35 +22607,35 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:libcurl-minimal:libcurl_minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:libcurl-minimal:libcurl_minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:libcurl_minimal:libcurl-minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:libcurl_minimal:libcurl-minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:libcurl_minimal:libcurl_minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:libcurl_minimal:libcurl_minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:libcurl:libcurl-minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:libcurl:libcurl-minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:libcurl:libcurl_minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:libcurl:libcurl_minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:libcurl-minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:libcurl-minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:libcurl_minimal:7.76.1-26.el9_3.2:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:libcurl_minimal:7.76.1-26.el9_3.3:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22643,15 +22643,15 @@
             },
             {
               "name": "syft:metadata:release",
-              "value": "26.el9_3.2"
+              "value": "26.el9_3.3"
             },
             {
               "name": "syft:metadata:size",
-              "value": "518150"
+              "value": "518190"
             },
             {
               "name": "syft:metadata:sourceRpm",
-              "value": "curl-7.76.1-26.el9_3.2.src.rpm"
+              "value": "curl-7.76.1-26.el9_3.3.src.rpm"
             }
           ]
         },
@@ -22689,7 +22689,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22743,7 +22743,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22797,7 +22797,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22851,7 +22851,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22905,7 +22905,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -22983,7 +22983,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23037,7 +23037,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23091,7 +23091,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23145,7 +23145,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23199,7 +23199,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23253,7 +23253,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23307,7 +23307,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23361,7 +23361,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23439,7 +23439,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23493,7 +23493,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23547,7 +23547,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23601,7 +23601,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23655,7 +23655,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23709,7 +23709,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23763,7 +23763,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23817,7 +23817,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23871,7 +23871,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23925,7 +23925,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -23979,7 +23979,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24033,7 +24033,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24087,7 +24087,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24141,7 +24141,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24195,7 +24195,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24273,7 +24273,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24327,7 +24327,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24381,7 +24381,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24435,7 +24435,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24513,7 +24513,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24591,7 +24591,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24645,7 +24645,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24699,7 +24699,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24777,7 +24777,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24855,7 +24855,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24909,7 +24909,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -24963,7 +24963,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25017,7 +25017,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25095,7 +25095,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25177,7 +25177,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25271,7 +25271,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25325,7 +25325,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25379,7 +25379,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25457,7 +25457,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25511,7 +25511,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25589,7 +25589,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25683,7 +25683,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25737,7 +25737,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25815,7 +25815,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25837,10 +25837,10 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/python3-pip-wheel@21.2.3-7.el9?arch=noarch\u0026upstream=python-pip-21.2.3-7.el9.src.rpm\u0026distro=rhel-9.3\u0026package-id=05d1ef10c40a6609",
+          "bom-ref": "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:pkg:rpm/rhel/python3-pip-wheel@21.2.3-7.el9_3.1?arch=noarch\u0026upstream=python-pip-21.2.3-7.el9_3.1.src.rpm\u0026distro=rhel-9.3\u0026package-id=e4079d612b2f99d9",
           "publisher": "Red Hat, Inc.",
           "name": "python3-pip-wheel",
-          "version": "21.2.3-7.el9",
+          "version": "21.2.3-7.el9_3.1",
           "licenses": [
             {
               "license": {
@@ -25848,8 +25848,8 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:python3-pip-wheel:python3-pip-wheel:21.2.3-7.el9:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/python3-pip-wheel@21.2.3-7.el9?arch=noarch\u0026upstream=python-pip-21.2.3-7.el9.src.rpm\u0026distro=rhel-9.3",
+          "cpe": "cpe:2.3:a:python3-pip-wheel:python3-pip-wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*",
+          "purl": "pkg:rpm/rhel/python3-pip-wheel@21.2.3-7.el9_3.1?arch=noarch\u0026upstream=python-pip-21.2.3-7.el9_3.1.src.rpm\u0026distro=rhel-9.3",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -25865,51 +25865,51 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python3-pip-wheel:python3_pip_wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:python3-pip-wheel:python3_pip_wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python3_pip_wheel:python3-pip-wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:python3_pip_wheel:python3-pip-wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python3_pip_wheel:python3_pip_wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:python3_pip_wheel:python3_pip_wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python3-pip:python3-pip-wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:python3-pip:python3-pip-wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python3-pip:python3_pip_wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:python3-pip:python3_pip_wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python3_pip:python3-pip-wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:python3_pip:python3-pip-wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python3_pip:python3_pip_wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:python3_pip:python3_pip_wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python3:python3-pip-wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:python3:python3-pip-wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:python3:python3_pip_wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:python3:python3_pip_wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:python3-pip-wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:python3-pip-wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:python3_pip_wheel:21.2.3-7.el9:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:python3_pip_wheel:21.2.3-7.el9_3.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -25917,7 +25917,7 @@
             },
             {
               "name": "syft:metadata:release",
-              "value": "7.el9"
+              "value": "7.el9_3.1"
             },
             {
               "name": "syft:metadata:size",
@@ -25925,7 +25925,7 @@
             },
             {
               "name": "syft:metadata:sourceRpm",
-              "value": "python-pip-21.2.3-7.el9.src.rpm"
+              "value": "python-pip-21.2.3-7.el9_3.1.src.rpm"
             }
           ]
         },
@@ -26003,7 +26003,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26057,7 +26057,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26127,7 +26127,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26181,7 +26181,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26235,7 +26235,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26313,7 +26313,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26367,7 +26367,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26421,7 +26421,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26499,7 +26499,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26581,7 +26581,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26659,7 +26659,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26713,7 +26713,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26791,7 +26791,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26869,7 +26869,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26923,7 +26923,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:bd7a97ee41a2e2c460a09e4da175c5cc0bdd78cfdd8d580a4f15768493f1c3c5"
+              "value": "sha256:5b61f2fc2fc6fa207139c820169544d7c0cc3c2bbc92ae1ef912b7e2ef162e8a"
             },
             {
               "name": "syft:location:0:path",
@@ -26994,7 +26994,7 @@
       "ref": "nexus@0.0.1",
       "dependsOn": [
         "registry1.dso.mil/ironbank/sonatype/nexus/nexus@3.65.0-02:a5f5c1697dfc3f54",
-        "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:a98089cfd0f287ef"
+        "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.3:a8ca1d3552d6004a"
       ]
     }
   ]
