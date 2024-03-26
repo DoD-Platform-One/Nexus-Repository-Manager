@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [66.0.0-bb.0] - 2024-03-22
+### Changed
+- Updated chart to version: 66.0.0-bb.0 | appVersion: 3.66.0-02
+- registry1.dso.mil/ironbank/google/go-containerregistry/crane v0.19.0 -> v0.19.1
+
 ## [65.0.0-bb.1] - 2024-03-04
 ### Changed
 - Openshift update for deploying Nexus into Openshift cluster
