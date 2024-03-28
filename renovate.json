@@ -5,7 +5,7 @@
     "dependencyDashboardHeader": "- [ ] Sync upstream helm chart version with updated dependencies.",
     "dependencyDashboardTitle": "Renovate: Upgrade Nexus Dependencies",
     "draftPR": true,
-    "enabledManagers": ["helm-values", "regex"],
+    "enabledManagers": ["helm-values", "regex", "helmv3"],
     "ignorePaths": ["chart/charts/**", "chart/examples/**", "chart/scripts/**"],
     "labels": ["nexus","renovate"],
     "commitMessagePrefix": "SKIP UPDATE CHECK",
