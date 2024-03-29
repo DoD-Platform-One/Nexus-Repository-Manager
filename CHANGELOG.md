@@ -1,6 +1,14 @@
 # Changelog
 
 ---
+## [66.0.0-bb.1] - 2024-03-27
+### Updated
+- Added allow-intranamespace policy
+- Added allow-nothing-policy
+- Added ingressgateway-authz-policy
+- Added monitoring-authz-policy
+- Added template for adding user defined policies
+
 ## [66.0.0-bb.0] - 2024-03-22
 ### Changed
 - Updated chart to version: 66.0.0-bb.0 | appVersion: 3.66.0-02
