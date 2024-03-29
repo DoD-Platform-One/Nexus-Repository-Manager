@@ -4,6 +4,15 @@ hostname: nexus
 domain: bigbang.dev
 istio:
   enabled: false
+  hardened: 
+    enabled: false
+    customAuthorizationPolicies: []
+    monitoring:
+      enabled: true
+      namespaces:
+        - monitoring
+      principals:
+        - cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-prometheus
   injection: disabled
   nexus:
     gateways:
