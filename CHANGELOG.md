@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [67.1.0-bb.0] - 2024-04-15
+### Changed
+- Updated chart to version: 67.1.0-bb.0 | appVersion: 3.67.1-01
+- Updated Gluon 0.4.7 -> 0.4.9
+
 ## [66.0.0-bb.1] - 2024-03-27
 ### Updated
 - Added allow-intranamespace policy
