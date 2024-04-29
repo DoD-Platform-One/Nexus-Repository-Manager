@@ -2,7 +2,6 @@
 {{- define "nexus-test.script-configmap" }}
 metadata:
   labels:
-    app.kubernetes.io/name: {{ include "nexus.name" . }}
     helm.sh/chart: {{ include "nexus.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
@@ -14,7 +13,6 @@ metadata:
 {{- define "nexus-test.script-runner" -}}
 metadata:
   labels:
-    app.kubernetes.io/name: {{ include "nexus.name" . }}
     helm.sh/chart: {{ include "nexus.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
