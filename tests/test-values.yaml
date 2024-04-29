@@ -6,11 +6,6 @@ bbtests:
 
 networkPolicies:
   enabled: true
-
-istio:
-  enabled: true
-  hardened:
-    enabled: true
   
 nexus:
   env:

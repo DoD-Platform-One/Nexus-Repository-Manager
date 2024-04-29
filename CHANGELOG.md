@@ -1,6 +1,12 @@
 # Changelog
 
 ---
+## [67.1.0-bb.2] - 2024-04-24
+### Fixed
+- Istio Hardening does nothing in package CI
+- Fix for bigbang tests
+- Remove old test artifacts no longer in use
+
 ## [67.1.0-bb.1] - 2024-04-22
 ### Added
 - Add istio hardening to package ci
