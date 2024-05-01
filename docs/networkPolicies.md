@@ -1,0 +1,2 @@
+
+Renovate (like many other BigBang components) allows you to specify additional network controls through values provided to the chart. Please consult [the Big Bang User Guide](https://docs-bigbang.dso.mil/latest/docs/guides/using-bigbang/network-policies/) for information and instruction in this regard.
