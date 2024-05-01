@@ -29,6 +29,9 @@ networkPolicies:
   ingressLabels:
     app: istio-ingressgateway
     istio: ingressgateway
+  # Additional network policies
+  # ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/    
+  additionalPolicies: []
 
 # External database - See docs/general.md
 custom_admin_password: ""

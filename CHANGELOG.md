@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+=======
+## [67.1.0-bb.3] - 2024-04-29
+### Added
+- Add support for additional custom network policies through the values yaml
+
 ## [67.1.0-bb.2] - 2024-04-24
 ### Fixed
 - Istio Hardening does nothing in package CI

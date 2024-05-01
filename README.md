@@ -1,6 +1,6 @@
 # nexus-repository-manager
 
-![Version: 67.1.0-bb.2](https://img.shields.io/badge/Version-67.1.0--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.67.1-01](https://img.shields.io/badge/AppVersion-3.67.1--01-informational?style=flat-square)
+![Version: 67.1.0-bb.3](https://img.shields.io/badge/Version-67.1.0--bb.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.67.1-01](https://img.shields.io/badge/AppVersion-3.67.1--01-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -50,6 +50,7 @@ helm install nexus-repository-manager chart/
 | networkPolicies.enabled | bool | `false` |  |
 | networkPolicies.ingressLabels.app | string | `"istio-ingressgateway"` |  |
 | networkPolicies.ingressLabels.istio | string | `"ingressgateway"` |  |
+| networkPolicies.additionalPolicies | list | `[]` |  |
 | custom_admin_password | string | `""` |  |
 | custom_metrics_password | string | `""` |  |
 | monitoring.enabled | bool | `false` |  |
