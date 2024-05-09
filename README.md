@@ -1,6 +1,6 @@
 # nexus-repository-manager
 
-![Version: 67.1.0-bb.3](https://img.shields.io/badge/Version-67.1.0--bb.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.67.1-01](https://img.shields.io/badge/AppVersion-3.67.1--01-informational?style=flat-square)
+![Version: 67.1.0-bb.4](https://img.shields.io/badge/Version-67.1.0--bb.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.67.1-01](https://img.shields.io/badge/AppVersion-3.67.1--01-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -40,6 +40,8 @@ helm install nexus-repository-manager chart/
 | istio.enabled | bool | `false` |  |
 | istio.hardened.enabled | bool | `false` |  |
 | istio.hardened.customAuthorizationPolicies | list | `[]` |  |
+| istio.hardened.outboundTrafficPolicyMode | string | `"REGISTRY_ONLY"` |  |
+| istio.hardened.customServiceEntries | list | `[]` |  |
 | istio.hardened.monitoring.enabled | bool | `true` |  |
 | istio.hardened.monitoring.namespaces[0] | string | `"monitoring"` |  |
 | istio.hardened.monitoring.principals[0] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-prometheus"` |  |

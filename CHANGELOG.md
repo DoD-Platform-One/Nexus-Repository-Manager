@@ -1,7 +1,10 @@
 # Changelog
 
 ---
-=======
+## [67.1.0-bb.4] - 2024-05-01
+### Added
+- Templates for Istio Sidecars and ServiceEntries, IstioHardened.md doc, values update
+
 ## [67.1.0-bb.3] - 2024-04-29
 ### Added
 - Add support for additional custom network policies through the values yaml
