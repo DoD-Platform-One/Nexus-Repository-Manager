@@ -1,0 +1,18 @@
+{{- /* Render Istio ServiceEntry for nuget */ -}}
+{{- if and .Values.istio.enabled .Values.istio.hardened.enabled -}}
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: nuget-service-entry
+  namespace: {{ .Release.Namespace }}
+spec:
+  exportTo:
+    - "."
+  hosts:
+    - "api.nuget.org"
+  location: MESH_EXTERNAL
+  ports:
+    - number: 443
+      protocol: TLS
+      name: https
+{{- end -}}

@@ -1,0 +1,20 @@
+{{- /* Render Istio ServiceEntry for sonatype */ -}}
+{{- if and .Values.istio.enabled .Values.istio.hardened.enabled -}}
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: sonatype-service-entry
+  namespace: {{ .Release.Namespace }}
+spec:
+  exportTo:
+    - "."
+  hosts:
+    - "links.sonatype.com"
+    - "download.sonatype.com"
+    - "sonatype-download.global.ssl.fastly.net"
+  location: MESH_EXTERNAL
+  ports:
+    - number: 443
+      protocol: TLS
+      name: https
+{{- end -}}

@@ -23,7 +23,7 @@ The below details the steps required to update to a new version of the Nexus pac
 
 # How to test Nexus
 
-Big Bang has added several CaC (configuration as code) jobs to automate certain configurations that the upstream Nexus Helm chart does not support. Nexus upgrades could break the CaC jobs (which are not currently tested in CI). Note that you will need a license to test the SSO job. The CaC job for repo creation does not require a license. Big Bang has a license for development/testing purposes. Members of the Big Bang team can request this license from one of the CODEOWNERS or reach out via the BB team channel.
+Big Bang has added several CaC (configuration as code) jobs to automate certain configurations that the upstream Nexus Helm chart does not support. Nexus upgrades could break the CaC jobs (which are not currently tested in CI). Note that you will need a license to test the SSO job. The CaC job for repo creation does not require a license. Big Bang has a license for development/testing purposes, which is located in S3 under `bb-licenses`.
 
 ## Test Basic Functionality, Repo Job, and Monitoring
 
@@ -74,7 +74,7 @@ addons:
         docker:
           enabled: true
           registries:
-            - host: containers.bigbang.dev
+            - host: containers.dev.bigbang.mil
               port: 5000
         repository:
           enabled: true
@@ -100,10 +100,10 @@ addons:
                   httpPort: 5000
 ```
 
-1. Log in as admin and run through the setup wizard to set an admin password and disable anonymous access.
-1. Locally run `docker login containers.bigbang.dev` using the username `admin` and password that you setup. Make sure that you have added `containers.bigbang.dev` to your `/etc/hosts` file along with the other hostnames.
-1. Locally run `docker tag alpine containers.bigbang.dev/alpine` (or tag a similar small image) then push that image with `docker push containers.bigbang.dev/alpine`. Validate the image pushes successfully which will confirm our repo job setup the docker repo.
-1. Navigate to the Prometheus target page (https://prometheus.bigbang.dev/targets) and validate that the Nexus target shows as up.
+1. Log in as admin and run through the setup wizard to set an admin password and disable anonymous access. If you change the admin password from what is in the secret, it will break the metrics job on subsequent reconciliation attempts.
+1. Locally run `docker login containers.dev.bigbang.mil` using the username `admin` and password that you setup. Make sure that you have added `containers.dev.bigbang.mil` to your `/etc/hosts` file along with the other hostnames.
+1. Locally run `docker tag alpine containers.dev.bigbang.mil/alpine` (or tag a similar small image) then push that image with `docker push containers.dev.bigbang.mil/alpine`. Validate the image pushes successfully which will confirm our repo job setup the docker repo.
+1. Navigate to the Prometheus target page (https://prometheus.dev.bigbang.mil/targets) and validate that the Nexus target shows as up.
 
 ## Test SSO Job
 
@@ -112,6 +112,11 @@ SSO Job testing will require your own deployment of Keycloak because you must ch
 Follow the instructions from the corresponding `DEVELOPMENT_MAINTENANCE.md` testing instructions in the Keycloak Package to deploy Keycloak. Then deploy Nexus with the following values (note the `idpMetadata` value must be filled in with your Keycloak's information and `license_key` from the license file):
 
 ```yaml
+sso:
+  saml:
+    # Fill this in with the result from `curl https://keycloak.dev.bigbang.mil/auth/realms/baby-yoda/protocol/saml/descriptor ; echo`
+    metadata: 'xxxxxxxxxxxxxxx'
+
 addons:
   nexus:
     enabled: true
@@ -124,14 +129,12 @@ addons:
     sso:
       enabled: true
       idp_data:
-        entityId: "https://nexus.bigbang.dev/service/rest/v1/security/saml/metadata"
+        entityId: "https://nexus.dev.bigbang.mil/service/rest/v1/security/saml/metadata"
         username: "username"
         firstName: "firstName"
         lastName: "lastName"
         email: "email"
         groups: "groups"
-        # Fill this in with the result from `curl https://keycloak.bigbang.dev/auth/realms/baby-yoda/protocol/saml/descriptor ; echo`
-        idpMetadata: 'xxxxxxxxxxxxxxx'
       role:
         # id is the name of the Keycloak group (case sensitive)
         - id: "Nexus"
@@ -150,7 +153,7 @@ addons:
 
 Once Nexus is up and running complete the following steps to properly configure the Keycloak client:
 
-1. Get the Nexus x509 cert from Nexus Admin UI (after logging in as admin you can get this from https://nexus.bigbang.dev/service/rest/v1/security/saml/metadata inside of the `X509Certificate` XML section).
+1. Get the Nexus x509 cert from Nexus Admin UI (after logging in as admin you can get this from https://nexus.dev.bigbang.mil/service/rest/v1/security/saml/metadata inside of the `X509Certificate` XML section).
 1. Copy and paste the Nexus single line cert into a text file and save it:
     ```bash
     vi nexus-x509.txt
@@ -165,7 +168,7 @@ Once Nexus is up and running complete the following steps to properly configure 
      ```bash
      fold -w 64 nexus-x509.txt > nexus.pem
      ```
-1. In Keycloak go to the Nexus client and on the Keys tab (https://keycloak.bigbang.dev/auth/admin/master/console/#/realms/baby-yoda/clients/f975a475-89c7-43bc-bddb-c9d974ff5ac3/saml/keys) import the nexus.pem file in both places, setting the archive format as Certificate PEM.
+1. In Keycloak go to the Nexus client and on the Keys tab (https://keycloak.dev.bigbang.mil/auth/admin/master/console/#/realms/baby-yoda/clients/f975a475-89c7-43bc-bddb-c9d974ff5ac3/saml/keys) import the nexus.pem file in both places, setting the archive format as Certificate PEM.
 
 Return to Nexus and validate you are able to login via SSO.
 
