@@ -1,6 +1,6 @@
 # nexus-repository-manager
 
-![Version: 67.1.0-bb.4](https://img.shields.io/badge/Version-67.1.0--bb.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.67.1-01](https://img.shields.io/badge/AppVersion-3.67.1--01-informational?style=flat-square)
+![Version: 68.1.0-bb.0](https://img.shields.io/badge/Version-68.1.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.68.1-02](https://img.shields.io/badge/AppVersion-3.68.1--02-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -105,7 +105,7 @@ helm install nexus-repository-manager chart/
 | proxy.request.data[0].httpsAuthNtlmDomain | string | `nil` |  |
 | proxy.request.data[0].nonProxyHosts | list | `[]` |  |
 | job_image.repository | string | `"registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal"` |  |
-| job_image.tag | float | `9.3` |  |
+| job_image.tag | float | `9.4` |  |
 | job_image.pullPolicy | string | `"IfNotPresent"` |  |
 | openshift | bool | `false` |  |
 | bbtests.enabled | bool | `false` |  |
@@ -128,7 +128,7 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.67.1-01"` |  |
+| image.tag | string | `"3.68.1-02"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |

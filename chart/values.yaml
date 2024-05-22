@@ -121,7 +121,7 @@ proxy:
 
 job_image:
   repository: registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal
-  tag: 9.3 
+  tag: 9.4 
   pullPolicy: IfNotPresent
 
 openshift: false
@@ -168,7 +168,7 @@ deploymentStrategy: Recreate
 image:
   # IB Nexus Image
   repository: registry1.dso.mil/ironbank/sonatype/nexus/nexus
-  tag: 3.67.1-01
+  tag: 3.68.1-02
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: private-registry
