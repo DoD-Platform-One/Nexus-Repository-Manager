@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [68.1.0-bb.0] - 2024-05-21
+### Changed
+- Updated chart to version: 68.1.0-bb.0 | appVersion: 3.68.1-02
+- Updated Gluon 0.4.9 -> 0.5.0
+
 ## [67.1.0-bb.4] - 2024-05-01
 ### Added
 - Templates for Istio Sidecars and ServiceEntries, IstioHardened.md doc, values update
