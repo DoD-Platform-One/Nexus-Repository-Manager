@@ -1,7 +1,7 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:bed83df8-e3e9-4246-a101-be2d1a1ab1d7",
+  "serialNumber": "urn:uuid:8506db43-3ae4-4e82-aa88-57a557275121",
   "version": 1,
   "metadata": {
     "tools": null,
@@ -15,7 +15,7 @@
   "components": [
     {
       "type": "container",
-      "bom-ref": "registry1.dso.mil/ironbank/sonatype/nexus/nexus@3.68.1-02:8de403a8a540bb37",
+      "bom-ref": "registry1.dso.mil/ironbank/sonatype/nexus/nexus@3.68.1-02:352cc9c2f42e7893",
       "name": "registry1.dso.mil/ironbank/sonatype/nexus/nexus",
       "version": "3.68.1-02",
       "components": [
@@ -381,7 +381,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:0b9e22ad202509cf11af2a22e1c851cfe89c7b36fd04d3fb071085c115acde80"
+              "value": "sha256:8803aa14e613c473a20b026008fa8d7c485b1d74e96ead9111a1cac504eaf978"
             },
             {
               "name": "syft:location:0:path",
@@ -29767,7 +29767,7 @@
     {
       "ref": "nexus@0.0.1",
       "dependsOn": [
-        "registry1.dso.mil/ironbank/sonatype/nexus/nexus@3.68.1-02:8de403a8a540bb37",
+        "registry1.dso.mil/ironbank/sonatype/nexus/nexus@3.68.1-02:352cc9c2f42e7893",
         "registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal@9.4:01523562ab63b316"
       ]
     }
