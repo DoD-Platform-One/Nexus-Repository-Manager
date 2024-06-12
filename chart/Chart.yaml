@@ -3,10 +3,10 @@ name: nexus-repository-manager
 
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
-version: 68.1.0-bb.0
+version: 69.0.0-bb.0
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application.
-appVersion: 3.68.1-02
+appVersion: 3.69.0-02
 
 description: Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -44,9 +44,9 @@ dependencies:
     repository: oci://registry1.dso.mil/bigbang
 annotations:
   bigbang.dev/applicationVersions: |
-    - Nexus: 3.68.1-02
+    - Nexus: 3.69.0-02
   helm.sh/images: |
     - name: nexus
-      image: registry1.dso.mil/ironbank/sonatype/nexus/nexus:3.68.1-02
+      image: registry1.dso.mil/ironbank/sonatype/nexus/nexus:3.69.0-02
     - name: ubi9-minimal
       image: registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal:9.4

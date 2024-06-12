@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [69.0.0-bb.0] - 2024-06-07
+### Changed
+- Updated chart to version: 69.0.0-bb.0 | appVersion: 3.69.0-02
+
 ## [68.1.0-bb.0] - 2024-05-21
 ### Changed
 - Updated chart to version: 68.1.0-bb.0 | appVersion: 3.68.1-02
