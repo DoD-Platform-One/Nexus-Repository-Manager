@@ -2,6 +2,14 @@
 
 ---
 
+## [69.0.0-bb.1] - 2024-06-26
+
+### Changed
+
+- Removed the allow nothing policy
+- Moved the authorization policies
+- Updated the istio hardened doc
+
 ## [69.0.0-bb.0] - 2024-06-07
 
 ### Changed

@@ -1,17 +1,15 @@
 # nexus-repository-manager
 
-![Version: 69.0.0-bb.0](https://img.shields.io/badge/Version-69.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.69.0-02](https://img.shields.io/badge/AppVersion-3.69.0--02-informational?style=flat-square)
+![Version: 69.0.0-bb.1](https://img.shields.io/badge/Version-69.0.0--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.69.0-02](https://img.shields.io/badge/AppVersion-3.69.0--02-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
 ## Upstream References
-
 * <https://www.sonatype.com/nexus-repository-oss>
 
 * <https://github.com/sonatype/nexus-public>
 
 ## Learn More
-
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -23,13 +21,12 @@ Sonatype Nexus Repository Manager - Universal Binary repository
 
 Install Helm
 
-<https://helm.sh/docs/intro/install/>
+https://helm.sh/docs/intro/install/
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
-
 ```bash
 helm install nexus-repository-manager chart/
 ```
@@ -131,7 +128,7 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.68.1-02"` |  |
+| image.tag | string | `"3.69.0-02"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |
