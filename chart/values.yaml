@@ -148,7 +148,17 @@ bbtests:
         memory: 4Gi
 
   scripts:
-    image: "registry1.dso.mil/ironbank/google/go-containerregistry/crane:v0.19.1"
+    image: "registry1.dso.mil/bigbang-ci/devops-tester:1.0.0"
+    additionalVolumes:
+      - name: docker-config
+        secret:
+          secretName: private-registry
+          items:
+          - key: .dockerconfigjson
+            path: auth.json
+    additionalVolumeMounts:
+      - name: docker-config
+        mountPath: /.docker/
     envs:
       docker_host: "nexus-nexus-repository-manager-docker-5000:5000"
       docker_user: "admin"

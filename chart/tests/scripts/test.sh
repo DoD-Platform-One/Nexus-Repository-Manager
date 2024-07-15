@@ -3,42 +3,16 @@ set -ex
 
 export HOME=/test
 
-/bin/crane auth login ${docker_host} -u ${docker_user} -p ${docker_password} ${docker_args}
+echo "[+] Copy r1 auth to writable file for multi-auth..."
+cat /.docker/auth.json > /test/auth.json
 
-echo "pulling image..."
-/bin/crane pull alpine:latest alpine-push.tar
+echo "[+] Login to nexus"
+skopeo login --tls-verify=false --authfile=/test/auth.json ${docker_host} -u ${docker_user} -p ${docker_password}
 
-image_tag=$RANDOM
+echo "[+] Copy image from registry1 to Nexus..."
+skopeo copy --dest-tls-verify=false --authfile=/test/auth.json docker://registry1.dso.mil/ironbank/opensource/alpinelinux/alpine:latest docker://${docker_host}/alpine:latest
 
-echo "pushing image to nexus registry..."
-
-# Retry due to timing with Nexus docker registry being ready for our request and finicky package CI
-for i in {1..10}; do 
-  /bin/crane push alpine-push.tar ${docker_host}/alpine:${image_tag} ${docker_args} && export EC=$? || export EC=$?
-  if [[ $EC == 0 ]]; then
-    break
-  fi
-  sleep 10
-done
-
-if [[ $EC != 0 ]]; then
-  echo "error while pushing to nexus registry, review logs above"
-  exit 1
-fi
-
-# Retry due to timing with Nexus docker registry being ready for our request and finicky package CI
-echo "pulling image from nexus registry..."
-for i in {1..10}; do 
-  /bin/crane pull ${docker_host}/alpine:${image_tag} alpine-pull.tar ${docker_args} && export EC=$? || export EC=$?
-  if [[ $EC == 0 ]]; then
-    break
-  fi
-  sleep 10
-done
-
-if [[ $EC != 0 ]]; then
-  echo "error while pulling from nexus registry, review logs above"
-  exit 1
-fi
+echo "[+] List tags on nexus repository..."
+skopeo list-tags --tls-verify=false --authfile=/test/auth.json docker://${docker_host}/alpine
 
 echo "All tests complete!"
