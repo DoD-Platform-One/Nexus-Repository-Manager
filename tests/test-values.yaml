@@ -1,8 +1,5 @@
 bbtests:
   enabled: true
-  scripts:
-    envs:
-      docker_args: "--insecure"
 
 networkPolicies:
   enabled: true

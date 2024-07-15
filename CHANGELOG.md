@@ -2,6 +2,12 @@
 
 ---
 
+## [69.0.0-bb.2] - 2024-07-11
+
+### Changed
+
+- Refactor script tests to use IB secured base alpine linux image and devops-tester image
+
 ## [69.0.0-bb.1] - 2024-06-26
 
 ### Changed
