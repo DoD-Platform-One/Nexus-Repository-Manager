@@ -49,5 +49,6 @@
             "datasourceTemplate": "docker"
         }
     ],
-    "separateMajorMinor": false
+    "separateMajorMinor": false,
+    "postUpdateOptions": ["helmUpdateSubChartArchives"]
 }
