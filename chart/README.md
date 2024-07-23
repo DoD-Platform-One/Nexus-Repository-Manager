@@ -5,11 +5,13 @@
 Sonatype Nexus Repository Manager - Universal Binary repository
 
 ## Upstream References
+
 * <https://www.sonatype.com/nexus-repository-oss>
 
 * <https://github.com/sonatype/nexus-public>
 
 ## Learn More
+
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -21,12 +23,13 @@ Sonatype Nexus Repository Manager - Universal Binary repository
 
 Install Helm
 
-https://helm.sh/docs/intro/install/
+<https://helm.sh/docs/intro/install/>
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
+
 ```bash
 helm install nexus-repository-manager chart/
 ```
