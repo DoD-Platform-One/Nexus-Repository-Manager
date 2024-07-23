@@ -10,6 +10,10 @@ Sonatype Nexus Repository Manager - Universal Binary repository
 
 * <https://github.com/sonatype/nexus-public>
 
+### Upstream Release Notes
+
+The [upstream Nexus Repository Manager release notes](https://help.sonatype.com/en/release-notes.html) may help when reviewing this package. We do not track an upstream _chart_ for this package.
+
 ## Learn More
 
 * [Application Overview](docs/overview.md)
