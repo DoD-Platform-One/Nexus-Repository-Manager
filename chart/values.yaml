@@ -148,7 +148,7 @@ bbtests:
         memory: 4Gi
 
   scripts:
-    image: "registry1.dso.mil/bigbang-ci/devops-tester:1.0.0"
+    image: "registry1.dso.mil/bigbang-ci/devops-tester:1.1.1"
     additionalVolumes:
       - name: docker-config
         secret:
@@ -178,7 +178,7 @@ deploymentStrategy: Recreate
 image:
   # IB Nexus Image
   repository: registry1.dso.mil/ironbank/sonatype/nexus/nexus
-  tag: 3.69.0-02
+  tag: 3.70.1-02
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: private-registry

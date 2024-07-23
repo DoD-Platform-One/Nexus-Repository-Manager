@@ -2,6 +2,13 @@
 
 ---
 
+## [70.1.0-bb.0] - 2024-07-19
+
+### Changed
+
+- Updated chart to version: 70.1.0-bb.0 | appVersion: 3.70.1-02
+- Updated devops-tester 1.0.0 -> 1.1.1
+
 ## [69.0.0-bb.2] - 2024-07-11
 
 ### Changed

@@ -1,15 +1,17 @@
 # nexus-repository-manager
 
-![Version: 69.0.0-bb.2](https://img.shields.io/badge/Version-69.0.0--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.69.0-02](https://img.shields.io/badge/AppVersion-3.69.0--02-informational?style=flat-square)
+![Version: 70.1.0-bb.0](https://img.shields.io/badge/Version-70.1.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.70.1-02](https://img.shields.io/badge/AppVersion-3.70.1--02-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
 ## Upstream References
+
 * <https://www.sonatype.com/nexus-repository-oss>
 
 * <https://github.com/sonatype/nexus-public>
 
 ## Learn More
+
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -21,12 +23,13 @@ Sonatype Nexus Repository Manager - Universal Binary repository
 
 Install Helm
 
-https://helm.sh/docs/intro/install/
+<https://helm.sh/docs/intro/install/>
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
+
 ```bash
 helm install nexus-repository-manager chart/
 ```
@@ -119,7 +122,7 @@ helm install nexus-repository-manager chart/
 | bbtests.cypress.resources.requests.memory | string | `"4Gi"` |  |
 | bbtests.cypress.resources.limits.cpu | int | `2` |  |
 | bbtests.cypress.resources.limits.memory | string | `"4Gi"` |  |
-| bbtests.scripts.image | string | `"registry1.dso.mil/bigbang-ci/devops-tester:1.0.0"` |  |
+| bbtests.scripts.image | string | `"registry1.dso.mil/bigbang-ci/devops-tester:1.1.1"` |  |
 | bbtests.scripts.additionalVolumes[0].name | string | `"docker-config"` |  |
 | bbtests.scripts.additionalVolumes[0].secret.secretName | string | `"private-registry"` |  |
 | bbtests.scripts.additionalVolumes[0].secret.items[0].key | string | `".dockerconfigjson"` |  |
@@ -134,7 +137,7 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.69.0-02"` |  |
+| image.tag | string | `"3.70.1-02"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |

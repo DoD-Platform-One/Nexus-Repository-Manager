@@ -11,11 +11,13 @@ BigBang requires/prefers SAML/SSO integration out of the box; unfortunately, the
 Our implementation closely follows the [Sonatype SAML Integration](https://support.sonatype.com/hc/en-us/articles/1500000976522-SAML-integration-for-Nexus-Repository-Manager-Pro-3-and-Nexus-IQ-Server-with-Keycloak) documentation.
 
 ## Download Keycloak IdP Metadata
+
 1. Login to the Keycloak Admin Console i.e. <KeycloakURL>/auth/admin/master/console/
 2. From the left-side menu, click on *Realm Settings*.
 3. From the General tab, right-click on SAML 2.0 Identity Provider Metadata under the Endpoints field and save the link/file locally. This is the Keycloak IdP metadata that will be needed when configuring NXRM/IQ.
 
 ## Configure Users and Groups in Keycloak
+
 4. To add groups, via the left-side menu, under *Manage*, select *Groups* and then *New*.
 5. In the next screen enter a group name and select *Save*. This will create a group that will be used for role mapping on the NXRM/IQ side.
 6. To add users, via the left-side menu, under *Manage*, select *Users* and then *Add user*.
@@ -23,8 +25,8 @@ Our implementation closely follows the [Sonatype SAML Integration](https://suppo
 8. Once saved, the user will be created but will not have a default password set or be assigned to any groups. To set the password, click on the *Credentials* tab, set a password and click *Reset Password*.
 9. To add the user to a group, click on the Groups tab and from the *Available Groups* field enter the name of the group created in Step 5 and click *Join*.
 
-
 ## NXRM Configuration
+
 ```
 # values.yaml
 sso:
@@ -59,6 +61,7 @@ sso:
 10. Obtain a copy of the NXRM 3 SAML Metadata by opening the Entity ID URI i.e. <NXRMBaseURL>/service/rest/v1/security/saml/metadata and saving the XML to file
 
 ## Configure Keycloak - Client Config and Attribute Mapping
+
 11. Further to configuring the NXRM/IQ side, to import the NXRM or IQ SAML metadata into Keycloak, via the Keycloak Admin Console select Clients from the left-side menu, then click *Create*.
 12. In the Add Client screen, click *Select file* from the Import field, upload the NXRM or IQ SAML metadata that was obtained when configuring the NXRM/IQ side and click *Save*.
 13. After saving, in the next screen, for the Client SAML Endpoint field, enter the Nexus instance*s Assertion Consumer Service (ACS) URL i.e. <NXRMBaseURL>/saml for NXRM 3 or <IQBaseURL>/saml for Nexus IQ Server and click *Save*.
@@ -80,17 +83,22 @@ Once the client has been created and the Client SAML Endpoint has been set, an a
   | Groups      | Group list    | groups    | groups        | *N/A*               | Basic                     |
 
 17. FINAL NOTE: If your Keycloak client is already configured but you have a new Nexus deployment you must update the Nexus x509 certificate in the Keycloak client.
-  - get new Nexus x509 cert from Nexus Admin UI after logging in as ```admin``` user  
-      https://nexus.bigbang.dev/service/rest/v1/security/saml/metadata
-  - copy and paste the single line cert into a text file
+
+- get new Nexus x509 cert from Nexus Admin UI after logging in as ```admin``` user  
+      <https://nexus.bigbang.dev/service/rest/v1/security/saml/metadata>
+- copy and paste the single line cert into a text file
+
       ```
       vi nexus-x509.txt
       -----BEGIN CERTIFICATE-----
       paste single line Nexus x509 certificate here 
       -----END CERTIFICATE-----
       ```
-  - make a valid pem file with proper wrapping at 64 characters per line
+
+- make a valid pem file with proper wrapping at 64 characters per line
+
       ```
       fold -w 64 nexus-x509.txt > nexus.pem
       ```
-  - in Keycloak Nexus client on the ```Keys``` tab import the nexus.pem file in two places, ```the Signing Key``` and the ```Encryption Key```
+
+- in Keycloak Nexus client on the ```Keys``` tab import the nexus.pem file in two places, ```the Signing Key``` and the ```Encryption Key```
