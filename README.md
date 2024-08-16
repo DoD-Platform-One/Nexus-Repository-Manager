@@ -1,6 +1,7 @@
+<!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 70.1.0-bb.0](https://img.shields.io/badge/Version-70.1.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.70.1-02](https://img.shields.io/badge/AppVersion-3.70.1--02-informational?style=flat-square)
+![Version: 71.0.0-bb.0](https://img.shields.io/badge/Version-71.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.71.0-06](https://img.shields.io/badge/AppVersion-3.71.0--06-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -141,7 +142,7 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.70.1-02"` |  |
+| image.tag | string | `"3.71.0-06"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |
@@ -245,3 +246,7 @@ helm install nexus-repository-manager chart/
 ## Contributing
 
 Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing.
+
+---
+
+_This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md)._

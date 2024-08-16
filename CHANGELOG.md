@@ -2,6 +2,19 @@
 
 ---
 
+## [71.0.0-bb.0] - 2024-08-15
+
+### Breaking Changes
+
+- Nexus 3.71.0-06 Removes support for internal OrientDB and replaces it with H2.
+- Nexus 3.71.0-06 Removes support for Java 8 and 11 and requires 17+
+- OrientDB migration required before upgrading if the internal DB is used. Steps can be found [here](https://help.sonatype.com/en/migrating-to-a-new-database.html).
+
+### Changed
+
+- Updated chart to version: 71.0.0-bb.0 | appVersion: 3.71.0-06
+- Updated Gluon 0.5.0 -> 0.5.3
+
 ## [70.1.0-bb.0] - 2024-07-19
 
 ### Changed
