@@ -8,6 +8,7 @@ As part of your MR that modifies istio you will need to run bigbang tests agains
 
 1. Create a new branch on bigbang off of master `git checkout master && git pull && git checkout -b my-bigbang-branch-for-testing.`
 1. Modify the [test values](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/tests/test-values.yaml?ref_type=heads). Yours will be different for your package, you may need more than this.
+
     ```yaml
     nexusRepositoryManager:
       git:
@@ -18,6 +19,7 @@ As part of your MR that modifies istio you will need to run bigbang tests agains
           hardened:
             enabled: true
     ```
+
 1. Stage your changes `git add -A.`
 1. Commit your changes `git commit -m "prepping for test."`
 1. Push your changes `git push -u origin my-bigbang-branch-for-testing.`
