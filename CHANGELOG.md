@@ -2,6 +2,12 @@
 
 ---
 
+## [71.0.0-bb.1] - 2024-09-13
+
+### Added
+
+- Updated `.Values.nexus.blobstores.blobstore[]` functionality to store each separate `.blobstore_data` item as a separate Kubernetes `Secret`, more effectively protecting any cloud credentials the user might need to pass to Nexus in order to create blobstores on S3 or Azure.
+
 ## [71.0.0-bb.0] - 2024-08-15
 
 ### Breaking Changes

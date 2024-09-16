@@ -33,40 +33,67 @@ spec:
         args:
           - -c
           - |
+            failure() {
+              local lineno=$1
+              local msg=$2
+              echo "Failed at $lineno: $msg"
+            }
+            trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
+
             {{- if and .Values.istio.enabled (eq .Values.istio.injection "enabled") }}
-            until curl --head localhost:15000; do echo "Waiting for Istio proxy sidecar"; sleep 10; done; echo "Sidecar available"  &&
+
+            ## wait for istio proxy sidecar availability
+            until curl --head localhost:15000; do echo "Waiting for Istio proxy sidecar"; sleep 10; done; echo "Sidecar available"
             {{- end }}
-            BASE_URL="http://{{ include "nexus.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.nexus.nexusPort }}"
-            
+
+            BASE_URL="http://{{ include "nexus.fullname" . }}:{{ .Values.nexus.nexusPort }}"
+
+            ## wait for nexus web service to start responding
+            echo "Check to see if Nexus API service is ready..."
+            until curl -s --head "${BASE_URL}/service/rest/v1/status"; do
+              echo "Waiting for nexus web server to start passing status check..."
+              sleep 10
+            done
+            echo "Nexus API server status check passed."
+
+            set -euo pipefail
+
             # blobstore creation
-            {{- range .Values.nexus.blobstores.blobstore }}           
+            {{- range $n, $blobstore := .Values.nexus.blobstores.blobstore }}
+            {{- with $blobstore }}
+            echo "Checking to see if {{ .type }} blobstore {{ .name }} already exists..."
             STATUS=$(curl -X GET -s -o /dev/null -w '%{http_code}' \
+              -u admin:"$API_CREDENTIALS" \
+              "$BASE_URL/service/rest/v1/blobstores/{{- .type }}/{{- .name }}" \
+              -H "accept: application/json" \
+              -H "Content-Type: application/json" \
+            )
+            if [ $STATUS -eq 200 ]
+            then
+              curl -X PUT --fail \
                 -u admin:"$API_CREDENTIALS" \
                 "$BASE_URL/service/rest/v1/blobstores/{{- .type }}/{{- .name }}" \
                 -H "accept: application/json" \
                 -H "Content-Type: application/json" \
-            )
-            if [ $STATUS -eq 200 ]
-            then
-              curl -X PUT \
-                  -u admin:"$API_CREDENTIALS" \
-                  "$BASE_URL/service/rest/v1/blobstores/{{- .type }}/{{- .name }}" \
-                  -H "accept: application/json" \
-                  -H "Content-Type: application/json" \
-                  -d {{ .blobstore_data | toJson | quote }}
+                -d @<(echo "${BLOBSTORE_DATA_SECRET_{{ $n }}}")
+              echo "Update successful for {{ .name }}."
             else
-              curl -X POST \
-                  -u admin:"$API_CREDENTIALS" \
-                  "$BASE_URL/service/rest/v1/blobstores/{{- .type }}" \
-                  -H "accept: application/json" \
-                  -H "Content-Type: application/json" \
-                  -d {{ .blobstore_data | toJson | quote }}
-            fi             
-            {{- end }} 
-            echo "Created blobstores"
-            
+              echo "Attempting to create new {{ .type }} blobstore {{ .name }}..."
+              echo "${BLOBSTORE_DATA_SECRET_{{ $n }}}"
+              curl -X POST -v --fail \
+                -u admin:"$API_CREDENTIALS" \
+                "$BASE_URL/service/rest/v1/blobstores/{{- .type }}" \
+                -H "accept: application/json" \
+                -H "Content-Type: application/json" \
+                -d @<(echo "${BLOBSTORE_DATA_SECRET_{{ $n }}}")
+              echo "Create successful for {{ .name }}."
+            fi
+            {{- end }}
+            {{- end }}
+            echo "Created blobstores."
+
             {{- if and .Values.istio.enabled (eq .Values.istio.injection "enabled") }}
-            curl -fsI -X POST http://localhost:15020/quitquitquit &&
+            curl -fsI -X POST http://localhost:15020/quitquitquit
             {{- end }}
             exit
         env:
@@ -75,6 +102,13 @@ spec:
             secretKeyRef:
               name: {{ template "nexus.name" . }}-secret
               key: admin.password
+        {{- range $n, $blobstore := .Values.nexus.blobstores.blobstore }}
+        - name: "BLOBSTORE_DATA_SECRET_{{ $n }}"
+          valueFrom:
+            secretKeyRef:
+              name: nexus-blobstore-data-{{ $n }}
+              key: blobstore_data
+        {{- end }}
         resources: {}
       restartPolicy: Never
 status: {}
