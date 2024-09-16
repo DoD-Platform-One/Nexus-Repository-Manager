@@ -194,6 +194,8 @@ nexus:
   # BB blobstore added
   blobstores:
     enabled: false
+    # -- `.type` must be one of `s3`, `azure`, or `file`.
+    # `.blobstore_data` must match the schema described in the [Nexus blobstore API docs](https://help.sonatype.com/en/blob-store-api.html) for more details.
     blobstore:
       - name: "test-nexus-blobstore"
         type: "s3"
@@ -206,10 +208,10 @@ nexus:
               prefix: ""
               expiration: 3
             bucketSecurity:
-              accessKeyId: "string"
-              secretAccessKey: "string"
-              role: "string"
-              sessionToken: "string"
+              accessKeyId: "your-accessKeyId"
+              secretAccessKey: "your-secretAccessKey"
+              role: "your-role"
+              sessionToken: "your-sessionToken"
 
   # BB repository added
   repository:

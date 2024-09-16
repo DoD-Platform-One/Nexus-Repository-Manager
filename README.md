@@ -1,12 +1,11 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 71.0.0-bb.0](https://img.shields.io/badge/Version-71.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.71.0-06](https://img.shields.io/badge/AppVersion-3.71.0--06-informational?style=flat-square)
+![Version: 71.0.0-bb.1](https://img.shields.io/badge/Version-71.0.0--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.71.0-06](https://img.shields.io/badge/AppVersion-3.71.0--06-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
 ## Upstream References
-
 * <https://www.sonatype.com/nexus-repository-oss>
 
 * <https://github.com/sonatype/nexus-public>
@@ -16,7 +15,6 @@ Sonatype Nexus Repository Manager - Universal Binary repository
 The [upstream Nexus Repository Manager release notes](https://help.sonatype.com/en/release-notes.html) may help when reviewing this package. We do not track an upstream _chart_ for this package.
 
 ## Learn More
-
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -28,13 +26,12 @@ The [upstream Nexus Repository Manager release notes](https://help.sonatype.com/
 
 Install Helm
 
-<https://helm.sh/docs/intro/install/>
+https://helm.sh/docs/intro/install/
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
-
 ```bash
 helm install nexus-repository-manager chart/
 ```
@@ -148,17 +145,7 @@ helm install nexus-repository-manager chart/
 | nexus.affinity | object | `{}` |  |
 | nexus.extraLabels.app | string | `"nexus-repository-manager"` |  |
 | nexus.blobstores.enabled | bool | `false` |  |
-| nexus.blobstores.blobstore[0].name | string | `"test-nexus-blobstore"` |  |
-| nexus.blobstores.blobstore[0].type | string | `"s3"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.name | string | `"test-nexus-blobstore"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.region | string | `"your-bucket-region"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.name | string | `"your-bucket-name"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.prefix | string | `""` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.expiration | int | `3` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.accessKeyId | string | `"string"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.secretAccessKey | string | `"string"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.role | string | `"string"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.sessionToken | string | `"string"` |  |
+| nexus.blobstores.blobstore | list | `[{"blobstore_data":{"bucketConfiguration":{"bucket":{"expiration":3,"name":"your-bucket-name","prefix":"","region":"your-bucket-region"},"bucketSecurity":{"accessKeyId":"your-accessKeyId","role":"your-role","secretAccessKey":"your-secretAccessKey","sessionToken":"your-sessionToken"}},"name":"test-nexus-blobstore"},"name":"test-nexus-blobstore","type":"s3"}]` | `.type` must be one of `s3`, `azure`, or `file`. `.blobstore_data` must match the schema described in the [Nexus blobstore API docs](https://help.sonatype.com/en/blob-store-api.html) for more details. |
 | nexus.repository.enabled | bool | `false` |  |
 | nexus.repository.repo[0].name | string | `"test-nexus"` |  |
 | nexus.repository.repo[0].format | string | `"raw"` |  |
@@ -250,3 +237,4 @@ Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in 
 ---
 
 _This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md)._
+
