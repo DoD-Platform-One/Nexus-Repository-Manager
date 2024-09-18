@@ -2,6 +2,13 @@
 
 ---
 
+## [72.0.0-bb.0] - 2024-09-17
+
+### Changed
+
+- Updated chart to version: 72.0.0-bb.0 | appVersion: 3.72.0-04
+- Updated Gluon 0.5.3 -> 0.5.4
+
 ## [71.0.0-bb.1] - 2024-09-13
 
 ### Added
