@@ -1,0 +1,18 @@
+{{- if .Values.nexus.repository.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "nexus.name" . }}-realm
+  labels: {{- include "nexus.labels" . | nindent 4 }}
+{{- if .Values.nexus.extraLabels }}
+  {{- with .Values.nexus.extraLabels }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+{{- end }}
+data:
+  {{- if and .Values.sso.enabled .Values.license_key }}
+  realm: '[{{ join "\",\"" .Values.sso.realm | printf "\"%s\""}}, "SamlRealm"]'
+  {{- else }}
+  realm: '[{{ join "\",\"" .Values.sso.realm | printf "\"%s\""}}]'
+  {{- end }}
+{{- end }}

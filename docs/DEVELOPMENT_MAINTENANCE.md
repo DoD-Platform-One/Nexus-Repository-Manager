@@ -82,6 +82,11 @@ addons:
       tag: null
       branch: "name-of-your-development-branch"
     values:
+      sso:
+        realm:
+          - NexusAuthenticatingRealm
+          - LdapRealm
+          - NpmToken
       nexus:
         docker:
           enabled: true
@@ -117,6 +122,21 @@ addons:
 1. Locally run `docker tag alpine containers.dev.bigbang.mil/alpine` (or tag a similar small image) then push that image with `docker push containers.dev.bigbang.mil/alpine`. Validate the image pushes successfully which will confirm our repo job setup the docker repo.
 1. Navigate to the Prometheus target page (<https://prometheus.dev.bigbang.mil/targets>) and validate that the Nexus target shows as up.
 
+> NOTE: The realms can be configured by passing in the realm values to the array.
+>- NexusAuthenticatingRealm
+>- SamlRealm *+
+>- ConanToken
+>- Crowd *
+>- DefaultRole
+>- DockerToken
+>- LdapRealm
+>- NpmToken
+>- NuGetApiKey
+>- rutauth-realm
+>- User-Token-Realm *
+>
+> Those designated with a `*` require the PRO version license, `+` will be auto set when `sso.enabled: true`
+
 ## Test SSO Job
 
 SSO Job testing will require your own deployment of Keycloak because you must change the client settings. This cannot be done with P1 login.dso.mil because we don't have admin privileges to change the config there.
@@ -130,7 +150,7 @@ sso:
     metadata: 'xxxxxxxxxxxxxxx'
 
 addons:
-  nexus:
+  nexusRepositoryManager:
     enabled: true
     git:
       tag: null
@@ -138,29 +158,30 @@ addons:
     # -- Base64 encoded license file.
     # cat ~/Downloads/sonatype-license-XXXX-XX-XXXXXXXXXX.lic | base64 -w 0 ; echo
     license_key: ""
-    sso:
-      enabled: true
-      idp_data:
-        entityId: "https://nexus.dev.bigbang.mil/service/rest/v1/security/saml/metadata"
-        username: "username"
-        firstName: "firstName"
-        lastName: "lastName"
-        email: "email"
-        groups: "groups"
-      role:
-        # id is the name of the Keycloak group (case sensitive)
-        - id: "Nexus"
-          name: "Keycloak Nexus Group"
-          description: "unprivilaged users"
-          privileges: []
-          roles: []
-        - id: "Nexus-Admin"
-          name: "Keycloak Nexus Admin Group"
-          description: "keycloak users as admins"
-          privileges:
-            - "nx-all"
-          roles:
-            - "nx-admin"
+    values:
+        sso:
+          enabled: true
+          idp_data:
+            entityId: "https://nexus.dev.bigbang.mil/service/rest/v1/security/saml/metadata"
+            username: "username"
+            firstName: "firstName"
+            lastName: "lastName"
+            email: "email"
+            groups: "groups"
+          role:
+            # id is the name of the Keycloak group (case sensitive)
+            - id: "Nexus"
+              name: "Keycloak Nexus Group"
+              description: "unprivilaged users"
+              privileges: []
+              roles: []
+            - id: "Nexus-Admin"
+              name: "Keycloak Nexus Admin Group"
+              description: "keycloak users as admins"
+              privileges:
+                - "nx-all"
+              roles:
+                - "nx-admin"
 ```
 
 Once Nexus is up and running complete the following steps to properly configure the Keycloak client:

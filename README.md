@@ -1,28 +1,29 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 72.0.0-bb.0](https://img.shields.io/badge/Version-72.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.72.0-04](https://img.shields.io/badge/AppVersion-3.72.0--04-informational?style=flat-square)
+![Version: 72.0.0-bb.1](https://img.shields.io/badge/Version-72.0.0--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.72.0-04](https://img.shields.io/badge/AppVersion-3.72.0--04-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
 ## Upstream References
-* <https://www.sonatype.com/nexus-repository-oss>
+- <https://www.sonatype.com/nexus-repository-oss>
 
-* <https://github.com/sonatype/nexus-public>
+- <https://github.com/sonatype/nexus-public>
 
-### Upstream Release Notes
+## Upstream Release Notes
 
 The [upstream Nexus Repository Manager release notes](https://help.sonatype.com/en/release-notes.html) may help when reviewing this package. We do not track an upstream _chart_ for this package.
 
 ## Learn More
-* [Application Overview](docs/overview.md)
-* [Other Documentation](docs/)
+
+- [Application Overview](docs/overview.md)
+- [Other Documentation](docs/)
 
 ## Pre-Requisites
 
-* Kubernetes Cluster deployed
-* Kubernetes config installed in `~/.kube/config`
-* Helm installed
+- Kubernetes Cluster deployed
+- Kubernetes config installed in `~/.kube/config`
+- Helm installed
 
 Install Helm
 
@@ -30,8 +31,9 @@ https://helm.sh/docs/intro/install/
 
 ## Deployment
 
-* Clone down the repository
-* cd into directory
+- Clone down the repository
+- cd into directory
+
 ```bash
 helm install nexus-repository-manager chart/
 ```
@@ -78,7 +80,6 @@ helm install nexus-repository-manager chart/
 | sso.idp_data.validateAssertionSignature | bool | `true` |  |
 | sso.idp_data.idpMetadata | string | `""` |  |
 | sso.realm[0] | string | `"NexusAuthenticatingRealm"` |  |
-| sso.realm[1] | string | `"SamlRealm"` |  |
 | sso.role[0].id | string | `"nexus"` |  |
 | sso.role[0].name | string | `"nexus"` |  |
 | sso.role[0].description | string | `"nexus group"` |  |

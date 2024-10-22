@@ -1,4 +1,4 @@
-{{- if and .Values.sso.enabled .Values.secret.enabled }}
+{{- if .Values.nexus.repository.enabled -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -7,7 +7,7 @@ metadata:
     "helm.sh/hook": post-install,post-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded,hook-failed
   creationTimestamp: null
-  name: saml
+  name: realm
 spec:
   template:
     metadata:
@@ -27,7 +27,7 @@ spec:
         imagePullPolicy: {{ .Values.job_image.pullPolicy }}
         securityContext:
           {{- toYaml .Values.nexus.containerSecurityContext | nindent 10 }}
-        name: saml
+        name: realm
         command:
           - sh
         args:
@@ -37,27 +37,15 @@ spec:
             until curl --head localhost:15000; do echo "Waiting for Istio proxy sidecar"; sleep 10; done; echo "Sidecar available"  &&
             {{- end }}
             BASE_URL="http://{{ include "nexus.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.nexus.nexusPort }}"
-            # If there is a license key
-            {{- if .Values.license_key }}
-            # saml metadata
+            # realm configuration
             curl -X PUT \
                  -u admin:"$API_CREDENTIALS" \
-                 "$BASE_URL/service/rest/v1/security/saml" \
+                 "$BASE_URL/service/rest/v1/security/realms/active" \
                  -H "accept: application/json" \
                  -H "Content-Type: application/json" \
-                 -d "$IDP_DATA" &&
-            {{- end }}
-            # role creation
-            {{- range .Values.sso.role }}
-            curl -X POST \
-                 -u admin:"$API_CREDENTIALS" \
-                 "$BASE_URL/service/rest/v1/security/roles" \
-                 -H "accept: application/json" \
-                 -H "Content-Type: application/json" \
-                 -d {{ . | toJson | quote }} &&
-            {{- end }} 
+                 -d "$REALM" &&
+            echo "Created realms"
 
-            echo "Created roles"
             {{- if and .Values.istio.enabled (eq .Values.istio.injection "enabled") }}
             curl -fsI -X POST http://localhost:15020/quitquitquit &&
             {{- end }}
@@ -69,16 +57,11 @@ spec:
             secretKeyRef:
               name: {{ template "nexus.name" . }}-secret
               key: admin.password
-        - name: IDP_DATA
+        - name: REALM
           valueFrom:
             configMapKeyRef:
-              name: {{ template "nexus.name" . }}-sso
-              key: idp-metadata
-        - name: ROLE
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "nexus.name" . }}-sso
-              key: role
+              name: {{ template "nexus.name" . }}-realm
+              key: realm
         resources: {}
       restartPolicy: Never
 status: {}
