@@ -80,7 +80,6 @@ sso:
     idpMetadata: ''
   realm:
     - "NexusAuthenticatingRealm"
-    - "SamlRealm"
   role:
     - id: "nexus"
       name: "nexus"

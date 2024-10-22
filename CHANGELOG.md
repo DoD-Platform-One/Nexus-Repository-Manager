@@ -2,6 +2,12 @@
 
 ---
 
+## [72.0.0-bb.1] - 2024-09-17
+
+### Changed
+
+- Decoupled realm configuration from sso and license requirements
+
 ## [72.0.0-bb.0] - 2024-09-17
 
 ### Changed

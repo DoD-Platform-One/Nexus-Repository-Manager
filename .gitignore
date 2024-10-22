@@ -1,1 +1,9 @@
 node_modules
+chart/tests/.env
+chart/tests/cypress.env.json
+chart/tests/cypress.config.js
+chart/tests/cypress/downloads/
+chart/tests/cypress/fixtures/
+chart/tests/cypress/support/
+chart/tests/cypress/screenshots/
+chart/tests/cypress/videos/
