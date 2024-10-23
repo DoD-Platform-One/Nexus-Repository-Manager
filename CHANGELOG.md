@@ -1,6 +1,14 @@
 # Changelog
 
 ---
+## [73.0.0-bb.0] - 2024-10-17
+
+### Changed
+
+- Updated chart to version: 73.0.0-bb.0 | appVersion: 3.73.0-12
+- Updated Gluon 0.5.4 -> 0.5.8
+- Updated ironbank/sonatype/nexus/nexus (source) 3.72.0-04 -> 3.73.0-12
+- Updated registry1.dso.mil/ironbank/sonatype/nexus/nexus (source) 3.72.0-04 -> 3.73.0-12
 
 ## [72.0.0-bb.1] - 2024-09-17
 
