@@ -82,8 +82,7 @@ addons:
       tag: null
       branch: "name-of-your-development-branch"
     values:
-      sso:
-        realm:
+      realm:
           - NexusAuthenticatingRealm
           - LdapRealm
           - NpmToken
@@ -123,6 +122,7 @@ addons:
 1. Navigate to the Prometheus target page (<https://prometheus.dev.bigbang.mil/targets>) and validate that the Nexus target shows as up.
 
 > NOTE: The realms can be configured by passing in the realm values to the array.
+>
 >- NexusAuthenticatingRealm
 >- SamlRealm *+
 >- ConanToken

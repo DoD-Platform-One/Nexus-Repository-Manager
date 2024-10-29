@@ -66,6 +66,8 @@ license_key: ""
 license:
   mountPath: /nexus-data/sonatype-license.lic
   subPath: sonatype-license.lic
+realm:
+  - "NexusAuthenticatingRealm"
 sso:
   enabled: false
   idp_data:
@@ -78,8 +80,6 @@ sso:
     validateResponseSignature: true
     validateAssertionSignature: true
     idpMetadata: ''
-  realm:
-    - "NexusAuthenticatingRealm"
   role:
     - id: "nexus"
       name: "nexus"

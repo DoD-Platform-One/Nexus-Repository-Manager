@@ -1,25 +1,30 @@
+<!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 65.0.0-bb.1](https://img.shields.io/badge/Version-61.0.0--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.65.0-02](https://img.shields.io/badge/AppVersion-3.61.0-informational?style=flat-square)
+![Version: 73.0.0-bb.1](https://img.shields.io/badge/Version-73.0.0--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.73.0-12](https://img.shields.io/badge/AppVersion-3.73.0--12-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
 ## Upstream References
 
-* <https://www.sonatype.com/nexus-repository-oss>
+- <https://www.sonatype.com/nexus-repository-oss>
 
-* <https://github.com/sonatype/nexus-public>
+- <https://github.com/sonatype/nexus-public>
+
+## Upstream Release Notes
+
+The [upstream Nexus Repository Manager release notes](https://help.sonatype.com/en/release-notes.html) may help when reviewing this package. We do not track an upstream _chart_ for this package.
 
 ## Learn More
 
-* [Application Overview](docs/overview.md)
-* [Other Documentation](docs/)
+- [Application Overview](docs/overview.md)
+- [Other Documentation](docs/)
 
 ## Pre-Requisites
 
-* Kubernetes Cluster deployed
-* Kubernetes config installed in `~/.kube/config`
-* Helm installed
+- Kubernetes Cluster deployed
+- Kubernetes config installed in `~/.kube/config`
+- Helm installed
 
 Install Helm
 
@@ -27,8 +32,8 @@ Install Helm
 
 ## Deployment
 
-* Clone down the repository
-* cd into directory
+- Clone down the repository
+- cd into directory
 
 ```bash
 helm install nexus-repository-manager chart/
@@ -43,7 +48,11 @@ helm install nexus-repository-manager chart/
 | istio.enabled | bool | `false` |  |
 | istio.hardened.enabled | bool | `false` |  |
 | istio.hardened.customAuthorizationPolicies | list | `[]` |  |
-| istio.hardened.monitoring.enabled | bool | `false` |  |
+| istio.hardened.outboundTrafficPolicyMode | string | `"REGISTRY_ONLY"` |  |
+| istio.hardened.customServiceEntries | list | `[]` |  |
+| istio.hardened.monitoring.enabled | bool | `true` |  |
+| istio.hardened.monitoring.namespaces[0] | string | `"monitoring"` |  |
+| istio.hardened.monitoring.principals[0] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-prometheus"` |  |
 | istio.injection | string | `"disabled"` |  |
 | istio.nexus.gateways[0] | string | `"istio-system/main"` |  |
 | istio.nexus.hosts[0] | string | `"{{ .Values.hostname }}.{{ .Values.domain }}"` |  |
@@ -51,6 +60,7 @@ helm install nexus-repository-manager chart/
 | networkPolicies.enabled | bool | `false` |  |
 | networkPolicies.ingressLabels.app | string | `"istio-ingressgateway"` |  |
 | networkPolicies.ingressLabels.istio | string | `"ingressgateway"` |  |
+| networkPolicies.additionalPolicies | list | `[]` |  |
 | custom_admin_password | string | `""` |  |
 | custom_metrics_password | string | `""` |  |
 | monitoring.enabled | bool | `false` |  |
@@ -60,6 +70,7 @@ helm install nexus-repository-manager chart/
 | license_key | string | `""` |  |
 | license.mountPath | string | `"/nexus-data/sonatype-license.lic"` |  |
 | license.subPath | string | `"sonatype-license.lic"` |  |
+| realm[0] | string | `"NexusAuthenticatingRealm"` |  |
 | sso.enabled | bool | `false` |  |
 | sso.idp_data.entityId | string | `""` |  |
 | sso.idp_data.usernameAttribute | string | `""` |  |
@@ -70,8 +81,6 @@ helm install nexus-repository-manager chart/
 | sso.idp_data.validateResponseSignature | bool | `true` |  |
 | sso.idp_data.validateAssertionSignature | bool | `true` |  |
 | sso.idp_data.idpMetadata | string | `""` |  |
-| sso.realm[0] | string | `"NexusAuthenticatingRealm"` |  |
-| sso.realm[1] | string | `"SamlRealm"` |  |
 | sso.role[0].id | string | `"nexus"` |  |
 | sso.role[0].name | string | `"nexus"` |  |
 | sso.role[0].description | string | `"nexus group"` |  |
@@ -103,7 +112,7 @@ helm install nexus-repository-manager chart/
 | proxy.request.data[0].httpsAuthNtlmDomain | string | `nil` |  |
 | proxy.request.data[0].nonProxyHosts | list | `[]` |  |
 | job_image.repository | string | `"registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal"` |  |
-| job_image.tag | float | `8.8` |  |
+| job_image.tag | float | `9.4` |  |
 | job_image.pullPolicy | string | `"IfNotPresent"` |  |
 | openshift | bool | `false` |  |
 | bbtests.enabled | bool | `false` |  |
@@ -113,7 +122,17 @@ helm install nexus-repository-manager chart/
 | bbtests.cypress.secretEnvs[0].name | string | `"cypress_nexus_pass"` |  |
 | bbtests.cypress.secretEnvs[0].valueFrom.secretKeyRef.name | string | `"nexus-repository-manager-secret"` |  |
 | bbtests.cypress.secretEnvs[0].valueFrom.secretKeyRef.key | string | `"admin.password"` |  |
-| bbtests.scripts.image | string | `"registry1.dso.mil/ironbank/google/go-containerregistry/crane:v0.15.2"` |  |
+| bbtests.cypress.resources.requests.cpu | int | `2` |  |
+| bbtests.cypress.resources.requests.memory | string | `"4Gi"` |  |
+| bbtests.cypress.resources.limits.cpu | int | `2` |  |
+| bbtests.cypress.resources.limits.memory | string | `"4Gi"` |  |
+| bbtests.scripts.image | string | `"registry1.dso.mil/bigbang-ci/devops-tester:1.1.1"` |  |
+| bbtests.scripts.additionalVolumes[0].name | string | `"docker-config"` |  |
+| bbtests.scripts.additionalVolumes[0].secret.secretName | string | `"private-registry"` |  |
+| bbtests.scripts.additionalVolumes[0].secret.items[0].key | string | `".dockerconfigjson"` |  |
+| bbtests.scripts.additionalVolumes[0].secret.items[0].path | string | `"auth.json"` |  |
+| bbtests.scripts.additionalVolumeMounts[0].name | string | `"docker-config"` |  |
+| bbtests.scripts.additionalVolumeMounts[0].mountPath | string | `"/.docker/"` |  |
 | bbtests.scripts.envs.docker_host | string | `"nexus-nexus-repository-manager-docker-5000:5000"` |  |
 | bbtests.scripts.envs.docker_user | string | `"admin"` |  |
 | bbtests.scripts.secretEnvs[0].name | string | `"docker_password"` |  |
@@ -122,23 +141,13 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.61.0-02"` |  |
+| image.tag | string | `"3.73.0-12"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |
 | nexus.extraLabels.app | string | `"nexus-repository-manager"` |  |
 | nexus.blobstores.enabled | bool | `false` |  |
-| nexus.blobstores.blobstore[0].name | string | `"test-nexus-blobstore"` |  |
-| nexus.blobstores.blobstore[0].type | string | `"s3"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.name | string | `"test-nexus-blobstore"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.region | string | `"your-bucket-region"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.name | string | `"your-bucket-name"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.prefix | string | `""` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucket.expiration | int | `3` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.accessKeyId | string | `"string"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.secretAccessKey | string | `"string"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.role | string | `"string"` |  |
-| nexus.blobstores.blobstore[0].blobstore_data.bucketConfiguration.bucketSecurity.sessionToken | string | `"string"` |  |
+| nexus.blobstores.blobstore | list | `[{"blobstore_data":{"bucketConfiguration":{"bucket":{"expiration":3,"name":"your-bucket-name","prefix":"","region":"your-bucket-region"},"bucketSecurity":{"accessKeyId":"your-accessKeyId","role":"your-role","secretAccessKey":"your-secretAccessKey","sessionToken":"your-sessionToken"}},"name":"test-nexus-blobstore"},"name":"test-nexus-blobstore","type":"s3"}]` | `.type` must be one of `s3`, `azure`, or `file`. `.blobstore_data` must match the schema described in the [Nexus blobstore API docs](https://help.sonatype.com/en/blob-store-api.html) for more details. |
 | nexus.repository.enabled | bool | `false` |  |
 | nexus.repository.repo[0].name | string | `"test-nexus"` |  |
 | nexus.repository.repo[0].format | string | `"raw"` |  |
@@ -153,7 +162,7 @@ helm install nexus-repository-manager chart/
 | nexus.repository.repo[0].repo_data.raw.contentDisposition | string | `"ATTACHMENT"` |  |
 | nexus.docker.enabled | bool | `false` |  |
 | nexus.env[0].name | string | `"INSTALL4J_ADD_VM_PARAMS"` |  |
-| nexus.env[0].value | string | `"-Dcom.redhat.fips=false -Xms2703M -Xmx2703M -XX:MaxDirectMemorySize=2703M -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Djava.util.prefs.userRoot=/nexus-data/javaprefs"` |  |
+| nexus.env[0].value | string | `"-Dcom.redhat.fips=false -Xms2703M -Xmx2703M -XX:MaxDirectMemorySize=2703M -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport -Djava.util.prefs.userRoot=/nexus-data/javaprefs"` |  |
 | nexus.env[1].name | string | `"NEXUS_SECURITY_RANDOMPASSWORD"` |  |
 | nexus.env[1].value | string | `"true"` |  |
 | nexus.properties.override | bool | `false` |  |
@@ -226,3 +235,7 @@ helm install nexus-repository-manager chart/
 ## Contributing
 
 Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing.
+
+---
+
+_This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md)._

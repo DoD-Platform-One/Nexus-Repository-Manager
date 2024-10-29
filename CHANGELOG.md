@@ -1,6 +1,13 @@
 # Changelog
 
 ---
+
+## [73.0.0-bb.1] - 2024-09-17
+
+### Changed
+
+- Refactored realm configuration from under sso configuration.
+
 ## [73.0.0-bb.0] - 2024-10-17
 
 ### Changed
