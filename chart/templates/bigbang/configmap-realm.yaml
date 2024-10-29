@@ -11,8 +11,8 @@ metadata:
 {{- end }}
 data:
   {{- if and .Values.sso.enabled .Values.license_key }}
-  realm: '[{{ join "\",\"" .Values.sso.realm | printf "\"%s\""}}, "SamlRealm"]'
+  realm: '[{{ join "\",\"" .Values.realm | printf "\"%s\""}}, "SamlRealm"]'
   {{- else }}
-  realm: '[{{ join "\",\"" .Values.sso.realm | printf "\"%s\""}}]'
+  realm: '[{{ join "\",\"" .Values.realm | printf "\"%s\""}}]'
   {{- end }}
 {{- end }}
