@@ -7,7 +7,7 @@ metadata:
     "helm.sh/hook": post-install,post-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded,hook-failed
   creationTimestamp: null
-  name: realm
+  name: realms
 spec:
   template:
     metadata:
@@ -27,7 +27,7 @@ spec:
         imagePullPolicy: {{ .Values.job_image.pullPolicy }}
         securityContext:
           {{- toYaml .Values.nexus.containerSecurityContext | nindent 10 }}
-        name: realm
+        name: realms
         command:
           - sh
         args:
@@ -43,7 +43,7 @@ spec:
                  "$BASE_URL/service/rest/v1/security/realms/active" \
                  -H "accept: application/json" \
                  -H "Content-Type: application/json" \
-                 -d "$REALM" &&
+                 -d "$REALMS" &&
             echo "Created realms"
 
             {{- if and .Values.istio.enabled (eq .Values.istio.injection "enabled") }}
@@ -57,11 +57,11 @@ spec:
             secretKeyRef:
               name: {{ template "nexus.name" . }}-secret
               key: admin.password
-        - name: REALM
+        - name: REALMS
           valueFrom:
             configMapKeyRef:
-              name: {{ template "nexus.name" . }}-realm
-              key: realm
+              name: {{ template "nexus.name" . }}-realms
+              key: realms
         resources: {}
       restartPolicy: Never
 status: {}

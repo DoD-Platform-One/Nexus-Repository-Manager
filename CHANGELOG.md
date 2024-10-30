@@ -6,7 +6,7 @@
 
 ### Changed
 
-- Refactored realm configuration from under sso configuration.
+- Refactored realm configuration from under sso configuration. Renamed to realms.
 
 ## [73.0.0-bb.0] - 2024-10-17
 
