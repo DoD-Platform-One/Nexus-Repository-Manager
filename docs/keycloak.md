@@ -29,6 +29,10 @@ Our implementation closely follows the [Sonatype SAML Integration](https://suppo
 
 ```
 # values.yaml
+realms
+  - "NexusAuthenticatingRealm"
+  - "NexusAuthorizingRealm"
+  - "SamlRealm"
 sso:
   enabled: false
   idp_data:
@@ -41,10 +45,6 @@ sso:
     validateResponseSignature: true
     validateAssertionSignature: true
     idpMetadata: 'string'
-  realm:
-    - "NexusAuthenticatingRealm"
-    - "NexusAuthorizingRealm"
-    - "SamlRealm"
   role:
     id: "nexus"
     name: "nexus"

@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "nexus.name" . }}-realm
+  name: {{ template "nexus.name" . }}-realms
   labels: {{- include "nexus.labels" . | nindent 4 }}
 {{- if .Values.nexus.extraLabels }}
   {{- with .Values.nexus.extraLabels }}
@@ -11,8 +11,8 @@ metadata:
 {{- end }}
 data:
   {{- if and .Values.sso.enabled .Values.license_key }}
-  realm: '[{{ join "\",\"" .Values.realm | printf "\"%s\""}}, "SamlRealm"]'
+  realms: '[{{ join "\",\"" .Values.realms | printf "\"%s\""}}, "SamlRealm"]'
   {{- else }}
-  realm: '[{{ join "\",\"" .Values.realm | printf "\"%s\""}}]'
+  realms: '[{{ join "\",\"" .Values.realms | printf "\"%s\""}}]'
   {{- end }}
 {{- end }}

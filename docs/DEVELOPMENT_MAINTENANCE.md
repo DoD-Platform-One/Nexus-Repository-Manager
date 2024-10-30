@@ -82,7 +82,7 @@ addons:
       tag: null
       branch: "name-of-your-development-branch"
     values:
-      realm:
+      realms:
           - NexusAuthenticatingRealm
           - LdapRealm
           - NpmToken
