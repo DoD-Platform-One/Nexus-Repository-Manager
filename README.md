@@ -1,15 +1,14 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 73.0.0-bb.1](https://img.shields.io/badge/Version-73.0.0--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.73.0-12](https://img.shields.io/badge/AppVersion-3.73.0--12-informational?style=flat-square)
+![Version: 74.0.0-bb.0](https://img.shields.io/badge/Version-74.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.74.0-05](https://img.shields.io/badge/AppVersion-3.74.0--05-informational?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
 ## Upstream References
-
 - <https://www.sonatype.com/nexus-repository-oss>
 
-- <https://github.com/sonatype/nexus-public>
+* <https://github.com/sonatype/nexus-public>
 
 ## Upstream Release Notes
 
@@ -28,7 +27,7 @@ The [upstream Nexus Repository Manager release notes](https://help.sonatype.com/
 
 Install Helm
 
-<https://helm.sh/docs/intro/install/>
+https://helm.sh/docs/intro/install/
 
 ## Deployment
 
@@ -141,7 +140,7 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.73.0-12"` |  |
+| image.tag | string | `"3.74.0-05"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |
@@ -239,3 +238,4 @@ Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in 
 ---
 
 _This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md)._
+
