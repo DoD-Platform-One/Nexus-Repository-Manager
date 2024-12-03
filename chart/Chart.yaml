@@ -43,6 +43,7 @@ dependencies:
     version: 0.5.10
     repository: oci://registry1.dso.mil/bigbang
 annotations:
+  bigbang.dev/maintenanceTrack: bb_integrated
   bigbang.dev/upstreamReleaseNotesMarkdown: |
     The [upstream Nexus Repository Manager release notes](https://help.sonatype.com/en/release-notes.html) may help when reviewing this package. We do not track an upstream _chart_ for this package.
   bigbang.dev/applicationVersions: |

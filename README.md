@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 74.0.0-bb.0](https://img.shields.io/badge/Version-74.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.74.0-05](https://img.shields.io/badge/AppVersion-3.74.0--05-informational?style=flat-square)
+![Version: 74.0.0-bb.0](https://img.shields.io/badge/Version-74.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.74.0-05](https://img.shields.io/badge/AppVersion-3.74.0--05-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
