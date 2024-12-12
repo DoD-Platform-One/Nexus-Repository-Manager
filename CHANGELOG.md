@@ -2,6 +2,16 @@
 
 ---
 
+## [75.0.0-bb.0] - 2024-12-10
+
+### Changed
+
+- Updated chart to version: 75.0.0-bb.0 | appVersion: 3.75.0-06
+- Updated Gluon 0.5.10 -> 0.5.12
+- Updated ironbank/sonatype/nexus/nexus (source) 3.74.0-05 -> 3.75.0-06
+- Updated registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal (source) 9.4 -> 9.5
+- Updated registry1.dso.mil/ironbank/sonatype/nexus/nexus (source) 3.74.0-05 -> 3.75.0-06
+
 ## [74.0.0-bb.0] - 2024-11-12
 
 ### Changed
