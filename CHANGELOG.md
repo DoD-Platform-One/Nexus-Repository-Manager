@@ -2,6 +2,12 @@
 
 ---
 
+## [75.0.0-bb.1] - 2024-12-18
+
+### Changed
+
+- Updated pod labels to use same as deployment labels
+
 ## [75.0.0-bb.0] - 2024-12-10
 
 ### Changed
