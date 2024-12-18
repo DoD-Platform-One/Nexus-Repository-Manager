@@ -33,7 +33,7 @@ spec:
           {{ toYaml .Values.nexus.podAnnotations | nindent 8}}
         {{- end }}
       labels:
-        {{- include "nexus.selectorLabels" . | nindent 8 }}
+        {{ include "nexus.labels" . | nindent 8 }}
         {{- with .Values.nexus.extraLabels }}
           {{- toYaml . | nindent 8 }}
         {{- end }}
