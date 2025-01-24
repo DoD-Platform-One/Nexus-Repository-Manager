@@ -1,13 +1,13 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 75.0.0-bb.1](https://img.shields.io/badge/Version-75.0.0--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.75.0-06](https://img.shields.io/badge/AppVersion-3.75.0--06-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 75.0.0-bb.2](https://img.shields.io/badge/Version-75.0.0--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.75.0-06-amd64](https://img.shields.io/badge/AppVersion-3.75.0--06--amd64-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
 ## Upstream References
-- <https://www.sonatype.com/nexus-repository-oss>
 
+- <https://www.sonatype.com/nexus-repository-oss>
 - <https://github.com/sonatype/nexus-public>
 
 ## Upstream Release Notes
@@ -125,7 +125,7 @@ helm install nexus-repository-manager chart/
 | bbtests.cypress.resources.requests.memory | string | `"4Gi"` |  |
 | bbtests.cypress.resources.limits.cpu | int | `2` |  |
 | bbtests.cypress.resources.limits.memory | string | `"4Gi"` |  |
-| bbtests.scripts.image | string | `"registry1.dso.mil/bigbang-ci/devops-tester:1.1.1"` |  |
+| bbtests.scripts.image | string | `"registry1.dso.mil/bigbang-ci/devops-tester:1.1.2"` |  |
 | bbtests.scripts.additionalVolumes[0].name | string | `"docker-config"` |  |
 | bbtests.scripts.additionalVolumes[0].secret.secretName | string | `"private-registry"` |  |
 | bbtests.scripts.additionalVolumes[0].secret.items[0].key | string | `".dockerconfigjson"` |  |
@@ -140,7 +140,7 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.75.0-06"` |  |
+| image.tag | string | `"3.75.0-06-amd64"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |
