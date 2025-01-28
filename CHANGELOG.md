@@ -6,9 +6,9 @@
 ### Changed
 
 - Updated Gluon 0.5.12 -> 0.5.14
-- ironbank/sonatype/nexus/nexus (source) 3.75.0-06 -> 3.75.0-06-amd64
+- ironbank/sonatype/nexus/nexus (source) 3.75.0-06 -> 3.75.0-06
 - registry1.dso.mil/bigbang-ci/devops-tester (source) 1.1.1 -> 1.1.2
-- registry1.dso.mil/ironbank/sonatype/nexus/nexus (source) 3.75.0-06 -> 3.75.0-06-amd64
+- registry1.dso.mil/ironbank/sonatype/nexus/nexus (source) 3.75.0-06 -> 3.75.0-06
 
 ## [75.0.0-bb.1] - 2024-12-18
 
