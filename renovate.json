@@ -27,7 +27,8 @@
                 "docker"
             ],
             "groupName": "Ironbank",
-            "versioning": "loose"
+            "versioning": "loose",
+            "allowedVersions": "!/-amd64$/"
         }
     ],
     "customManagers": [
