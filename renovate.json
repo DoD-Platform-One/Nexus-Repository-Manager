@@ -28,7 +28,7 @@
             ],
             "groupName": "Ironbank",
             "versioning": "loose",
-            "allowedVersions": "!/-amd64$/"
+            "allowedVersions": "!/-(amd64|arm64)$/"
         }
     ],
     "customManagers": [
