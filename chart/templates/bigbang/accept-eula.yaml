@@ -1,13 +1,13 @@
-{{- if .Values.nexus.repository.enabled }}
+{{- if .Values.nexus.repository.enabled -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
   annotations:
-    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-weight": "-10"
     "helm.sh/hook": post-install,post-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded,hook-failed
   creationTimestamp: null
-  name: repo
+  name: accept-eula
 spec:
   template:
     metadata:
@@ -27,13 +27,13 @@ spec:
         imagePullPolicy: {{ .Values.job_image.pullPolicy }}
         securityContext:
           {{- toYaml .Values.nexus.containerSecurityContext | nindent 10 }}
-        name: repo
+        name: accept-eula
         command:
           - sh
         args:
           - -c
           - |
-            set -e  # Exit immediately if a command exits with a non-zero status
+            set -xe  # Exit immediately if a command exits with a non-zero status, print commands
             
             BASE_URL="http://{{ include "nexus.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.nexus.nexusPort }}"
             
@@ -52,40 +52,49 @@ spec:
               fi
             done
             
-            echo "[+] Creating repositories using REST API at $BASE_URL"
+            # Additional wait to ensure Nexus API is fully initialized
+            echo "Waiting for Nexus API to be fully initialized..."
+            sleep 15
+            echo "Proceeding with EULA acceptance..."
             
-            # repo creation
-            {{- range .Values.nexus.repository.repo }}
-            echo "[+] Checking for repository {{- .name }} ({{- .format }}/{{- .type }})"
-            STATUS=$(curl -v -X GET -s -o /dev/null -w '%{http_code}' \
-                -u admin:"$API_CREDENTIALS" \
-                "$BASE_URL/service/rest/v1/repositories/{{- .format }}/{{- .type }}/{{- .name }}" \
-                -H "accept: application/json" \
-                -H "Content-Type: application/json" \
-            )
+            echo "[+] Accepting EULA using REST API at $BASE_URL"
             
-            echo "[+] Repository status: $STATUS"
-            if [ $STATUS -eq 200 ]
-            then
-              echo "[+] Repository {{- .name }} already exists - skipping update"
-              # No need to update, just continue to the next repository
-              # This makes the job idempotent and prevents 405 errors when repo already exists
+            # Get current EULA status
+            echo "[+] Getting current EULA status"
+            EULA_RESPONSE=$(curl -v --fail --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X GET -s -u admin:"$API_CREDENTIALS" \
+              "${BASE_URL}/service/rest/v1/system/eula")
+              
+            if [ $? -ne 0 ]; then
+              echo "[!] Failed to get EULA status"
+              exit 1
+            fi
+            
+            echo "[+] Current EULA response: $EULA_RESPONSE"
+            
+            # Check if EULA is already accepted
+            if echo "$EULA_RESPONSE" | grep -q '"accepted" *: *true'; then
+              echo "[+] EULA already accepted - skipping update"
             else
-              echo "[+] Repository does not exist, creating {{- .name }}"
+              # Update EULA to accepted
+              echo "[+] Setting EULA as accepted"
+              UPDATED_EULA=$(echo "$EULA_RESPONSE" | sed 's/"accepted" *: *false/"accepted": true/g')
+              echo "[+] Updated EULA data: $UPDATED_EULA"
+              
+              # Post updated EULA
               curl -v --fail --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X POST \
-                  -u admin:"$API_CREDENTIALS" \
-                  "$BASE_URL/service/rest/v1/repositories/{{- .format }}/{{- .type }}" \
-                  -H "accept: application/json" \
-                  -H "Content-Type: application/json" \
-                  -d {{ .repo_data | toJson | quote }}
-                  
+                -u admin:"$API_CREDENTIALS" \
+                "${BASE_URL}/service/rest/v1/system/eula" \
+                -H "Content-Type: application/json" \
+                -d "$UPDATED_EULA"
+                
               if [ $? -ne 0 ]; then
-                echo "[!] Failed to create repository {{- .name }}"
+                echo "[!] Failed to accept EULA"
                 exit 1
               fi
+              
+              echo "[+] Successfully accepted EULA"
             fi
-            {{- end }}
-            echo "[+] Successfully created/updated all repositories"
+            
             exit 0
         
         env:
