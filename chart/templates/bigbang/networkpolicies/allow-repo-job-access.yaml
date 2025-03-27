@@ -1,0 +1,27 @@
+{{- if and .Values.networkPolicies.enabled .Values.nexus.repository.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-repo-job-access
+  namespace: {{ .Release.Namespace }}
+spec:
+  podSelector:
+    matchExpressions:
+    - key: job-name
+      operator: In
+      values:
+      - accept-eula
+      - repo
+      - realms
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: nexus-repository-manager
+          app.kubernetes.io/instance: {{ .Release.Name }}
+    ports:
+    - protocol: TCP
+      port: {{ .Values.nexus.nexusPort | default 8081 }}
+{{- end }}

@@ -1,6 +1,14 @@
 # Changelog
 
 ---
+
+## [77.1.0-bb.0] - 2025-03-26
+
+### Changed
+
+- ironbank/sonatype/nexus/nexus (source) 3.75.0-06 -> 3.77.0-01
+- registry1.dso.mil/ironbank/sonatype/nexus/nexus (source) 3.75.0-06 -> 3.75.0-01
+
 ## [75.0.0-bb.2] - 2025-01-24
 
 ### Changed

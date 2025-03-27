@@ -1,0 +1,22 @@
+{{- if and .Values.networkPolicies.enabled .Values.bbtests.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-script-test-to-docker-registry
+  namespace: {{ .Release.Namespace }}
+spec:
+  podSelector:
+    matchLabels:
+      helm-test: enabled
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: nexus-repository-manager
+          app.kubernetes.io/instance: {{ .Release.Name }}
+    ports:
+    - protocol: TCP
+      port: {{ index .Values.nexus.docker.registries 0 "port" | default 5000 }}
+{{- end }}

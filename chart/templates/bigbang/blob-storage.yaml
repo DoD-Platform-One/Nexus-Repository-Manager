@@ -40,12 +40,6 @@ spec:
             }
             trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
 
-            {{- if and .Values.istio.enabled (eq .Values.istio.injection "enabled") }}
-
-            ## wait for istio proxy sidecar availability
-            until curl --head localhost:15000; do echo "Waiting for Istio proxy sidecar"; sleep 10; done; echo "Sidecar available"
-            {{- end }}
-
             BASE_URL="http://{{ include "nexus.fullname" . }}:{{ .Values.nexus.nexusPort }}"
 
             ## wait for nexus web service to start responding
@@ -70,7 +64,7 @@ spec:
             )
             if [ $STATUS -eq 200 ]
             then
-              curl -X PUT --fail \
+              curl --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X PUT --fail \
                 -u admin:"$API_CREDENTIALS" \
                 "$BASE_URL/service/rest/v1/blobstores/{{- .type }}/{{- .name }}" \
                 -H "accept: application/json" \
@@ -80,7 +74,7 @@ spec:
             else
               echo "Attempting to create new {{ .type }} blobstore {{ .name }}..."
               echo "${BLOBSTORE_DATA_SECRET_{{ $n }}}"
-              curl -X POST -v --fail \
+              curl --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X PUT --fail \
                 -u admin:"$API_CREDENTIALS" \
                 "$BASE_URL/service/rest/v1/blobstores/{{- .type }}" \
                 -H "accept: application/json" \
@@ -92,9 +86,6 @@ spec:
             {{- end }}
             echo "Created blobstores."
 
-            {{- if and .Values.istio.enabled (eq .Values.istio.injection "enabled") }}
-            curl -fsI -X POST http://localhost:15020/quitquitquit
-            {{- end }}
             exit
         env:
         - name: API_CREDENTIALS
