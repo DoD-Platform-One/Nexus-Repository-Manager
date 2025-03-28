@@ -2,6 +2,12 @@
 
 ---
 
+## [77.1.0-bb.1] - 2025-03-28
+
+### Changed
+
+- Updated `NetworkPolicy` selector logic in anticipation of operatorless istio
+
 ## [77.1.0-bb.0] - 2025-03-26
 
 ### Changed
@@ -411,7 +417,7 @@
 
 ### Changed
 
-- Added improvements to the repository job.  Nexus was failing when a duplicate API POST would occur.
+- Added improvements to the repository job. Nexus was failing when a duplicate API POST would occur.
 - Added support for creating and updating blob storage from values.yaml
 
 ## [38.0.0-bb.1] - 2022-04-27
@@ -491,7 +497,7 @@
 
 ### Modified
 
-- Added ability to specify VirtualService hosts using ` .Values.istio.nexus.hosts ` and setting default as `{{ .Values.hostname }}.{{ .Values.domain }}` in `values.yaml`
+- Added ability to specify VirtualService hosts using `.Values.istio.nexus.hosts` and setting default as `{{ .Values.hostname }}.{{ .Values.domain }}` in `values.yaml`
 - Updating Nexus version.
 
 ## [34.1.0-bb.5] - 2021-10-27
