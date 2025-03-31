@@ -1,42 +1,35 @@
-bbtests:
-  enabled: true
-
-networkPolicies:
-  enabled: true
-  
-nexus:
-  env:
-    - name: INSTALL4J_ADD_VM_PARAMS
-      value: "-Dcom.redhat.fips=false -Xms1024M -Xmx1024M -XX:MaxDirectMemorySize=1024M -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport -Djava.util.prefs.userRoot=/nexus-data/javaprefs"
-    - name: NEXUS_SECURITY_RANDOMPASSWORD
-      value: "true"
-      
-  docker:
+#########################
+# Disable Core Packages #
+#########################
+monitoring:
+  enabled: false
+grafana:
+  enabled: false
+neuvector:
+  enabled: false
+loki:
+  enabled: false
+promtail:
+  enabled: false
+tempo:
+  enabled: false
+kyvernoReporter:
+  enabled: false
+kiali:
+  enabled: false
+addons:
+  minioOperator:
+    enabled: false
+########################
+# Required for package #
+########################
+  nexusRepositoryManager:
     enabled: true
-    registries:
-      # This host isn't used when ingress/istio are disabled so it can be whatever we want
-      - host: nexus-registry
-        port: 5000
-
-  repository:
-    enabled: true
-    repo:
-      - name: "containers"
-        format: "docker"
-        type: "hosted"
-        repo_data:
-          name: "containers"
-          online: true
-          storage:
-            blobStoreName: "default"
-            strictContentTypeValidation: true
-            writePolicy: "allow_once"
-          cleanup:
-            policyNames:
-              - "string"
-          component:
-            proprietaryComponents: true
-          docker:
-            v1Enabled: false
-            forceBasicAuth: true
-            httpPort: 5000
+kyvernoPolicies:
+  values:
+    bbtests:
+      enabled: false
+kyverno:
+  values:
+    bbtests:
+      enabled: false
