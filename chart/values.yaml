@@ -161,6 +161,7 @@ bbtests:
     envs:
       docker_host: "nexus-nexus-repository-manager-docker-5000:5000"
       docker_user: "admin"
+      docker_host_tls_enabled: "false"
     secretEnvs:
       - name: docker_password
         valueFrom:

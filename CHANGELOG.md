@@ -2,6 +2,13 @@
 
 ---
 
+## [77.1.0-bb.2] - 2025-04-21
+
+### Changed
+
+- Updated `curl` in tests to use `-L` to correctly handle http-to-https redirection
+- Added parameters to determine if in-cluster test calls should use TLS
+
 ## [77.1.0-bb.1] - 2025-03-28
 
 ### Changed
