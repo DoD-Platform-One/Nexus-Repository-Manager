@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 77.1.0-bb.2](https://img.shields.io/badge/Version-77.1.0--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.77.1-01](https://img.shields.io/badge/AppVersion-3.77.1--01-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 79.0.0-bb.0](https://img.shields.io/badge/Version-79.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.79.0-09](https://img.shields.io/badge/AppVersion-3.79.0--09-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -134,13 +134,14 @@ helm install nexus-repository-manager chart/
 | bbtests.scripts.additionalVolumeMounts[0].mountPath | string | `"/.docker/"` |  |
 | bbtests.scripts.envs.docker_host | string | `"nexus-nexus-repository-manager-docker-5000:5000"` |  |
 | bbtests.scripts.envs.docker_user | string | `"admin"` |  |
+| bbtests.scripts.envs.docker_host_tls_enabled | string | `"false"` |  |
 | bbtests.scripts.secretEnvs[0].name | string | `"docker_password"` |  |
 | bbtests.scripts.secretEnvs[0].valueFrom.secretKeyRef.name | string | `"nexus-repository-manager-secret"` |  |
 | bbtests.scripts.secretEnvs[0].valueFrom.secretKeyRef.key | string | `"admin.password"` |  |
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.77.1-01"` |  |
+| image.tag | string | `"3.79.0-09"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |

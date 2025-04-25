@@ -2,6 +2,14 @@
 
 ---
 
+## [77.1.0-bb.0] - 2025-04-23
+
+### Changed
+
+- Updated Gluon 0.5.12 -> 0.5.15
+- ironbank/sonatype/nexus/nexus (source) 3.77.0-01 -> 3.79.0-09
+- registry1.dso.mil/ironbank/sonatype/nexus/nexus (source) 3.77.0-01 -> 3.79.0-09
+
 ## [77.1.0-bb.2] - 2025-04-21
 
 ### Changed
