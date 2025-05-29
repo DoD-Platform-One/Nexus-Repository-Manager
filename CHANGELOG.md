@@ -2,6 +2,12 @@
 
 ---
 
+## [79.0.0-bb.1] - 2025-05-28
+
+### Changed
+
+- Correct issue with Accept Eula Job Pod Logs
+
 ## [79.0.0-bb.0] - 2025-04-23
 
 ### Changed

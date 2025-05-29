@@ -33,14 +33,14 @@ spec:
         args:
           - -c
           - |
-            set -xe  # Exit immediately if a command exits with a non-zero status, print commands
+            set -e  # Exit immediately if a command exits with a non-zero status
             
             BASE_URL="http://{{ include "nexus.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.nexus.nexusPort }}"
             
             # Wait for Nexus service to be ready
             echo "Waiting for Nexus service at $BASE_URL to be ready..."
             for i in $(seq 1 30); do
-              if curl -s -f -m 5 "${BASE_URL}/"; then
+              if curl -s -f -m 5 "${BASE_URL}/" > /dev/null; then
                 echo "Nexus service is ready."
                 break
               fi
@@ -61,7 +61,7 @@ spec:
             
             # Get current EULA status
             echo "[+] Getting current EULA status"
-            EULA_RESPONSE=$(curl -v --fail --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X GET -s -u admin:"$API_CREDENTIALS" \
+            EULA_RESPONSE=$(curl -s --fail --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X GET -u admin:"$API_CREDENTIALS" \
               "${BASE_URL}/service/rest/v1/system/eula")
               
             if [ $? -ne 0 ]; then
@@ -81,7 +81,7 @@ spec:
               echo "[+] Updated EULA data: $UPDATED_EULA"
               
               # Post updated EULA
-              curl -v --fail --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X POST \
+              curl -s --fail --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X POST \
                 -u admin:"$API_CREDENTIALS" \
                 "${BASE_URL}/service/rest/v1/system/eula" \
                 -H "Content-Type: application/json" \
