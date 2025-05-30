@@ -36,7 +36,7 @@ spec:
             failure() {
               local lineno=$1
               local msg=$2
-              echo "Failed at $lineno: $msg"
+              echo "A command failed at $lineno."
             }
             trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
 
@@ -64,7 +64,7 @@ spec:
             )
             if [ $STATUS -eq 200 ]
             then
-              curl --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X PUT --fail \
+              curl -s --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X POST --fail \
                 -u admin:"$API_CREDENTIALS" \
                 "$BASE_URL/service/rest/v1/blobstores/{{- .type }}/{{- .name }}" \
                 -H "accept: application/json" \
@@ -74,7 +74,7 @@ spec:
             else
               echo "Attempting to create new {{ .type }} blobstore {{ .name }}..."
               echo "${BLOBSTORE_DATA_SECRET_{{ $n }}}"
-              curl --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X PUT --fail \
+              curl -s --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X POST --fail \
                 -u admin:"$API_CREDENTIALS" \
                 "$BASE_URL/service/rest/v1/blobstores/{{- .type }}" \
                 -H "accept: application/json" \
