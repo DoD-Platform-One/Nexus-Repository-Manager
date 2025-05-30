@@ -2,6 +2,12 @@
 
 ---
 
+## [79.0.0-bb.2] - 2025-05-29
+
+### Changed
+
+- Correct issue with failure in blob storage creation job
+
 ## [79.0.0-bb.1] - 2025-05-28
 
 ### Changed
