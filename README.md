@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 79.0.0-bb.2](https://img.shields.io/badge/Version-79.0.0--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.79.0-09](https://img.shields.io/badge/AppVersion-3.79.0--09-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 79.0.0-bb.3](https://img.shields.io/badge/Version-79.0.0--bb.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.79.0-09](https://img.shields.io/badge/AppVersion-3.79.0--09-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -111,7 +111,7 @@ helm install nexus-repository-manager chart/
 | proxy.request.data[0].httpsAuthNtlmDomain | string | `nil` |  |
 | proxy.request.data[0].nonProxyHosts | list | `[]` |  |
 | job_image.repository | string | `"registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal"` |  |
-| job_image.tag | float | `9.5` |  |
+| job_image.tag | float | `9.6` |  |
 | job_image.pullPolicy | string | `"IfNotPresent"` |  |
 | openshift | bool | `false` |  |
 | bbtests.enabled | bool | `false` |  |
