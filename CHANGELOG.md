@@ -2,6 +2,13 @@
 
 ---
 
+## [79.0.0-bb.3] - 2025-06-10
+
+### Changed
+
+- Updated Gluon 0.5.15 -> 0.6.2
+- Updated registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal (source) 9.5 -> 9.6
+
 ## [79.0.0-bb.2] - 2025-05-29
 
 ### Changed

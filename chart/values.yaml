@@ -120,7 +120,7 @@ proxy:
 
 job_image:
   repository: registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal
-  tag: 9.5 
+  tag: 9.6 
   pullPolicy: IfNotPresent
 
 openshift: false
