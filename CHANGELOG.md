@@ -2,6 +2,14 @@
 
 ---
 
+## [81.1.0-bb.0] - 2025-07-02
+
+### Changed
+
+- ironbank/sonatype/nexus/nexus (source) 3.79.0-09 -> 3.81.1-01
+- registry1.dso.mil/ironbank/sonatype/nexus/nexus (source) 3.79.0-09 -> 3.81.1-01
+- Updated cypress tests for 3.81.1-01
+
 ## [79.0.0-bb.3] - 2025-06-10
 
 ### Changed
