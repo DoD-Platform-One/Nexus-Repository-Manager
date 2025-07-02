@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 79.0.0-bb.3](https://img.shields.io/badge/Version-79.0.0--bb.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.79.0-09](https://img.shields.io/badge/AppVersion-3.79.0--09-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 81.1.0-bb.0](https://img.shields.io/badge/Version-81.1.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.81.1-01](https://img.shields.io/badge/AppVersion-3.81.1--01-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -141,7 +141,7 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.79.0-09"` |  |
+| image.tag | string | `"3.81.1-01"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |
@@ -162,7 +162,7 @@ helm install nexus-repository-manager chart/
 | nexus.repository.repo[0].repo_data.raw.contentDisposition | string | `"ATTACHMENT"` |  |
 | nexus.docker.enabled | bool | `false` |  |
 | nexus.env[0].name | string | `"INSTALL4J_ADD_VM_PARAMS"` |  |
-| nexus.env[0].value | string | `"-Dcom.redhat.fips=false -Xms2703M -Xmx2703M -XX:MaxDirectMemorySize=2703M -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport -Djava.util.prefs.userRoot=/nexus-data/javaprefs"` |  |
+| nexus.env[0].value | string | `"-Dcom.redhat.fips=false -Xms2703M -Xmx2703M -XX:MaxDirectMemorySize=2703M -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport -Djava.util.prefs.userRoot=/nexus-data/javaprefs -Dkaraf.data=/nexus-data"` |  |
 | nexus.env[1].name | string | `"NEXUS_SECURITY_RANDOMPASSWORD"` |  |
 | nexus.env[1].value | string | `"true"` |  |
 | nexus.properties.override | bool | `false` |  |
