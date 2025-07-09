@@ -12,6 +12,9 @@ spec:
   template:
     metadata:
       creationTimestamp: null
+      labels:
+        app.kubernetes.io/part-of: nexus-repository-manager
+        job-name: blobstorage
     spec:
       activeDeadlineSeconds: 90
       {{- with .Values.imagePullSecrets }}
@@ -64,7 +67,7 @@ spec:
             )
             if [ $STATUS -eq 200 ]
             then
-              curl -s --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X POST --fail \
+              curl -s --retry-delay 5 --retry-max-time 60 --retry 10 --retry-connrefused -X PUT --fail \
                 -u admin:"$API_CREDENTIALS" \
                 "$BASE_URL/service/rest/v1/blobstores/{{- .type }}/{{- .name }}" \
                 -H "accept: application/json" \
