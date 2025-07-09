@@ -1,0 +1,45 @@
+{{- if and .Values.networkPolicies.enabled .Values.nexus.blobstores.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-blobstorage-egress
+  namespace: {{ .Release.Namespace }}
+spec:
+  podSelector:
+    matchLabels:
+      job-name: blobstorage
+  policyTypes:
+  - Egress
+  egress:
+  # Allow DNS
+  - to:
+    - namespaceSelector: {}
+      podSelector:
+        matchLabels:
+          k8s-app: kube-dns
+    ports:
+    - protocol: UDP
+      port: 53
+  # Allow access to Nexus API
+  - to:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: nexus-repository-manager
+    ports:
+    - protocol: TCP
+      port: 8081
+  {{- $hasS3 := false }}
+  {{- range .Values.nexus.blobstores.blobstore }}
+  {{- if eq .type "s3" }}
+  {{- $hasS3 = true }}
+  {{- end }}
+  {{- end }}
+  {{- if $hasS3 }}
+  # Allow HTTPS egress for S3
+  - to:
+    - namespaceSelector: {}
+    ports:
+    - protocol: TCP
+      port: 443
+  {{- end }}
+{{- end }}

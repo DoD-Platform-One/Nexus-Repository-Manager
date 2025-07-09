@@ -1,0 +1,61 @@
+{{- if and .Values.istio.enabled .Values.nexus.blobstores.enabled }}
+{{- $s3Regions := list }}
+{{- range .Values.nexus.blobstores.blobstore }}
+{{- if eq .type "s3" }}
+{{- if .blobstore_data.bucketConfiguration.bucket.region }}
+{{- $s3Regions = append $s3Regions .blobstore_data.bucketConfiguration.bucket.region | uniq }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- range $region := $s3Regions }}
+---
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: blobstore-s3-{{ $region | replace "." "-" | lower }}
+  namespace: {{ $.Release.Namespace }}
+spec:
+  hosts:
+  - s3.{{ $region }}.amazonaws.com
+  {{- if hasPrefix "us-gov-" $region }}
+  - s3-{{ $region }}.amazonaws.com
+  {{- end }}
+  - s3.amazonaws.com
+  {{- range $blobstore := $.Values.nexus.blobstores.blobstore }}
+  {{- if and (eq $blobstore.type "s3") (eq $blobstore.blobstore_data.bucketConfiguration.bucket.region $region) }}
+  {{- if $blobstore.blobstore_data.bucketConfiguration.bucket.name }}
+  - {{ $blobstore.blobstore_data.bucketConfiguration.bucket.name }}.s3.{{ $region }}.amazonaws.com
+  {{- if hasPrefix "us-gov-" $region }}
+  - {{ $blobstore.blobstore_data.bucketConfiguration.bucket.name }}.s3-{{ $region }}.amazonaws.com
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+  ports:
+  - number: 443
+    name: https
+    protocol: HTTPS
+  location: MESH_EXTERNAL
+  resolution: DNS
+{{- end }}
+{{- if $s3Regions }}
+---
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: blobstore-aws-sts
+  namespace: {{ .Release.Namespace }}
+spec:
+  hosts:
+  - sts.amazonaws.com
+  {{- range $region := $s3Regions }}
+  - sts.{{ $region }}.amazonaws.com
+  {{- end }}
+  ports:
+  - number: 443
+    name: https
+    protocol: HTTPS
+  location: MESH_EXTERNAL
+  resolution: DNS
+{{- end }}
+{{- end }}

@@ -2,6 +2,12 @@
 
 ---
 
+## [81.1.0-bb.1] - 2025-07-08
+
+### Changed
+
+- Correct issue with failure in blob storage update job
+
 ## [81.1.0-bb.0] - 2025-07-02
 
 ### Changed
@@ -132,7 +138,7 @@
 
 - Nexus 3.71.0-06 Removes support for internal OrientDB and replaces it with H2.
 - Nexus 3.71.0-06 Removes support for Java 8 and 11 and requires 17+
-- OrientDB migration required before upgrading if the internal DB is used. Steps can be found [here](https://help.sonatype.com/en/migrating-to-a-new-database.html).
+- OrientDB migration required before upgrading if the internal DB is used. Steps can be found [in the Sonatype documentation](https://help.sonatype.com/en/migrating-to-a-new-database.html).
 
 ### Changed
 
