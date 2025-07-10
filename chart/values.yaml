@@ -247,7 +247,7 @@ nexus:
     # https://help.sonatype.com/repomanager3/product-information/system-requirements
     - name: INSTALL4J_ADD_VM_PARAMS
       # info about fips option: https://access.redhat.com/documentation/en-us/openjdk/8/pdf/configuring_openjdk_8_on_rhel_with_fips/openjdk-8-configuring_openjdk_8_on_rhel_with_fips-en-us.pdf
-      value: "-Dcom.redhat.fips=false -Xms2703M -Xmx2703M -XX:MaxDirectMemorySize=2703M -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport -Djava.util.prefs.userRoot=/nexus-data/javaprefs -Dkaraf.data=/nexus-data"
+      value: "-Dcom.redhat.fips=false -Xms2703M -Xmx2703M -XX:MaxDirectMemorySize=2703M -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport -Djava.util.prefs.userRoot=/nexus-data/javaprefs -Dkaraf.data=/nexus-data -Dnexus.licenseFile=/nexus-data/sonatype-license.lic"
     - name: NEXUS_SECURITY_RANDOMPASSWORD
       value: "true"
   properties:

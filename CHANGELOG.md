@@ -2,6 +2,12 @@
 
 ---
 
+## [81.1.0-bb.2] - 2025-07-09
+
+### Changed
+
+- Correct issue with license_key
+
 ## [81.1.0-bb.1] - 2025-07-08
 
 ### Changed
