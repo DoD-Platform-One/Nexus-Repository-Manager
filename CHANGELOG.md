@@ -2,6 +2,12 @@
 
 ---
 
+## [81.1.0-bb.3] - 2025-07-22
+
+### Changed
+
+- Correct issue with INSTALL4J_ADD_VM_PARAMS value defaults
+
 ## [81.1.0-bb.2] - 2025-07-09
 
 ### Changed

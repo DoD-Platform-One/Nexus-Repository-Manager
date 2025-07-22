@@ -75,7 +75,15 @@ spec:
                 command: {{ .Values.deployment.postStart.command }}
           {{- end }}
           env:
-            {{ toYaml .Values.nexus.env | nindent 12 }}
+            {{- range .Values.nexus.env }}
+            {{- if eq .name "INSTALL4J_ADD_VM_PARAMS" }}
+            - name: {{ .name }}
+              value: "{{ .value }}{{- if $.Values.license_key }} -Dnexus.licenseFile=/nexus-data/sonatype-license.lic{{- end }}"
+            {{- else }}
+            - name: {{ .name }}
+              value: {{ .value | quote }}
+            {{- end }}
+            {{- end }}
           envFrom:
             {{ toYaml .Values.nexus.envFrom | nindent 12 }}
           resources:
