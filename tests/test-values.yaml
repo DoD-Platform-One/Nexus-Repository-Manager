@@ -9,8 +9,6 @@ neuvector:
   enabled: false
 loki:
   enabled: false
-promtail:
-  enabled: false
 tempo:
   enabled: false
 kyvernoReporter:
@@ -20,9 +18,9 @@ kiali:
 addons:
   minioOperator:
     enabled: false
-########################
-# Required for package #
-########################
+    ########################
+    # Required for package #
+    ########################
   nexusRepositoryManager:
     enabled: true
 kyvernoPolicies:
