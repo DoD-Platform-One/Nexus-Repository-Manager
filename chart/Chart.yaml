@@ -1,15 +1,12 @@
 apiVersion: v2
 name: nexus-repository-manager
-
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
-version: 82.0.0-bb.0
+version: 82.0.0-bb.1
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application.
-appVersion: 3.82.0-08
-
+appVersion: 3.83.1-03
 description: Sonatype Nexus Repository Manager - Universal Binary repository
-
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
@@ -19,7 +16,6 @@ description: Sonatype Nexus Repository Manager - Universal Binary repository
 # a dependency of application charts to inject those utilities and functions into the rendering
 # pipeline. Library charts do not define any templates and therefore cannot be deployed.
 type: application
-
 keywords:
   - artifacts
   - dependency
@@ -40,16 +36,16 @@ maintainers:
     name: Sonatype
 dependencies:
   - name: gluon
-    version: 0.7.0
+    version: 0.8.2
     repository: oci://registry1.dso.mil/bigbang
 annotations:
   bigbang.dev/maintenanceTrack: bb_integrated
   bigbang.dev/upstreamReleaseNotesMarkdown: |
     The [upstream Nexus Repository Manager release notes](https://help.sonatype.com/en/release-notes.html) may help when reviewing this package. We do not track an upstream _chart_ for this package.
   bigbang.dev/applicationVersions: |
-    - Nexus: 3.82.0-08
+    - Nexus: 3.83.1-03
   helm.sh/images: |
     - name: nexus
-      image: registry1.dso.mil/ironbank/sonatype/nexus/nexus:3.82.0-08
+      image: registry1.dso.mil/ironbank/sonatype/nexus/nexus:3.83.1-03
     - name: ubi9-minimal
       image: registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal:9.6
