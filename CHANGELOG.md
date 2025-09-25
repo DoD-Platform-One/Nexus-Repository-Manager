@@ -2,6 +2,12 @@
 
 ---
 
+## [84.0.0-bb.1] - 2025-09-25
+
+### Changed
+
+- Updated Gluon 0.9.0 -> 0.9.1
+
 ## [84.0.0-bb.0] - 2025-09-15
 
 ### Changed
@@ -15,6 +21,8 @@
 ### Changed
 
 - Changed chart version to 83.0.0-bb.0 which is taken from the minor version of the app version 3.83.1-03
+
+
 
 ## [82.0.0-bb.1] - 2025-08-25
 
