@@ -6,6 +6,7 @@
     "dependencyDashboard": true,
     "dependencyDashboardTitle": "Renovate: Upgrade Nexus Dependencies",
     "draftPR": true,
+    "branchName": "renovate/ironbank",
     "enabledManagers": [
         "helm-values",
         "custom.regex",
@@ -20,12 +21,9 @@
         "nexus",
         "renovate"
     ],
-    "commitMessagePrefix": "SKIP UPDATE CHECK",
     "packageRules": [
         {
-            "matchDatasources": [
-                "docker"
-            ],
+            "matchManagers": ["custom.regex"],
             "groupName": "Ironbank",
             "versioning": "loose",
             "allowedVersions": "!/-(amd64|arm64)$/"
