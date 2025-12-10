@@ -1,7 +1,7 @@
 ---
 # -- Big Bang Additions
 hostname: nexus
-domain: bigbang.dev
+domain: dev.bigbang.mil
 istio:
   enabled: false
   hardened: 
@@ -120,7 +120,7 @@ proxy:
 
 job_image:
   repository: registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal
-  tag: 9.6 
+  tag: 9.7 
   pullPolicy: IfNotPresent
 
 openshift: false
@@ -178,7 +178,7 @@ deploymentStrategy: Recreate
 image:
   # IB Nexus Image
   repository: registry1.dso.mil/ironbank/sonatype/nexus/nexus
-  tag: 3.84.0-03
+  tag: 3.86.2-01
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: private-registry
@@ -228,9 +228,9 @@ nexus:
             blobStoreName: "default"
             strictContentTypeValidation: true
             writePolicy: "allow_once"
-          cleanup:
-            policyNames:
-              - "string"
+          # cleanup:
+          #   policyNames:
+          #     - "your-cleanup-policy-name"
           component:
             proprietaryComponents: true
           raw:
