@@ -2,6 +2,14 @@
 
 ---
 
+## [86.0.0-bb.0] - 2025-12-09
+
+### Changed
+
+- update gluon 0.9.1 -> 0.9.6
+- update nexus app image 3.84.0-03 -> 3.86.2-01
+- update ubi9-minimal 9.6 -> 9.7
+
 ## [84.0.0-bb.1] - 2025-09-25
 
 ### Changed

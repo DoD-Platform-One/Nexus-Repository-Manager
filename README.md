@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 84.0.0-bb.1](https://img.shields.io/badge/Version-84.0.0--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.84.0-03](https://img.shields.io/badge/AppVersion-3.84.0--03-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 86.0.0-bb.0](https://img.shields.io/badge/Version-86.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.86.2-01](https://img.shields.io/badge/AppVersion-3.86.2--01-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
@@ -43,7 +43,7 @@ helm install nexus-repository-manager chart/
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | hostname | string | `"nexus"` | Big Bang Additions |
-| domain | string | `"bigbang.dev"` |  |
+| domain | string | `"dev.bigbang.mil"` |  |
 | istio.enabled | bool | `false` |  |
 | istio.hardened.enabled | bool | `false` |  |
 | istio.hardened.customAuthorizationPolicies | list | `[]` |  |
@@ -111,7 +111,7 @@ helm install nexus-repository-manager chart/
 | proxy.request.data[0].httpsAuthNtlmDomain | string | `nil` |  |
 | proxy.request.data[0].nonProxyHosts | list | `[]` |  |
 | job_image.repository | string | `"registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal"` |  |
-| job_image.tag | float | `9.6` |  |
+| job_image.tag | float | `9.7` |  |
 | job_image.pullPolicy | string | `"IfNotPresent"` |  |
 | openshift | bool | `false` |  |
 | bbtests.enabled | bool | `false` |  |
@@ -141,7 +141,7 @@ helm install nexus-repository-manager chart/
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.84.0-03"` |  |
+| image.tag | string | `"3.86.2-01"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |
@@ -157,7 +157,6 @@ helm install nexus-repository-manager chart/
 | nexus.repository.repo[0].repo_data.storage.blobStoreName | string | `"default"` |  |
 | nexus.repository.repo[0].repo_data.storage.strictContentTypeValidation | bool | `true` |  |
 | nexus.repository.repo[0].repo_data.storage.writePolicy | string | `"allow_once"` |  |
-| nexus.repository.repo[0].repo_data.cleanup.policyNames[0] | string | `"string"` |  |
 | nexus.repository.repo[0].repo_data.component.proprietaryComponents | bool | `true` |  |
 | nexus.repository.repo[0].repo_data.raw.contentDisposition | string | `"ATTACHMENT"` |  |
 | nexus.docker.enabled | bool | `false` |  |
