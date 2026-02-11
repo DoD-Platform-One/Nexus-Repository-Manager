@@ -1,14 +1,14 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # nexus-repository-manager
 
-![Version: 74.0.0-bb.0](https://img.shields.io/badge/Version-74.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.74.0-05](https://img.shields.io/badge/AppVersion-3.74.0--05-informational?style=flat-square)
+![Version: 88.0.0-bb.0](https://img.shields.io/badge/Version-88.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.88.0-08-4909530](https://img.shields.io/badge/AppVersion-3.88.0--08--4909530-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 Sonatype Nexus Repository Manager - Universal Binary repository
 
 ## Upstream References
-- <https://www.sonatype.com/nexus-repository-oss>
 
-* <https://github.com/sonatype/nexus-public>
+- <https://www.sonatype.com/nexus-repository-oss>
+- <https://github.com/sonatype/nexus-public>
 
 ## Upstream Release Notes
 
@@ -43,7 +43,7 @@ helm install nexus-repository-manager chart/
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | hostname | string | `"nexus"` | Big Bang Additions |
-| domain | string | `"bigbang.dev"` |  |
+| domain | string | `"dev.bigbang.mil"` |  |
 | istio.enabled | bool | `false` |  |
 | istio.hardened.enabled | bool | `false` |  |
 | istio.hardened.customAuthorizationPolicies | list | `[]` |  |
@@ -111,7 +111,7 @@ helm install nexus-repository-manager chart/
 | proxy.request.data[0].httpsAuthNtlmDomain | string | `nil` |  |
 | proxy.request.data[0].nonProxyHosts | list | `[]` |  |
 | job_image.repository | string | `"registry1.dso.mil/ironbank/redhat/ubi/ubi9-minimal"` |  |
-| job_image.tag | float | `9.4` |  |
+| job_image.tag | float | `9.7` |  |
 | job_image.pullPolicy | string | `"IfNotPresent"` |  |
 | openshift | bool | `false` |  |
 | bbtests.enabled | bool | `false` |  |
@@ -125,7 +125,7 @@ helm install nexus-repository-manager chart/
 | bbtests.cypress.resources.requests.memory | string | `"4Gi"` |  |
 | bbtests.cypress.resources.limits.cpu | int | `2` |  |
 | bbtests.cypress.resources.limits.memory | string | `"4Gi"` |  |
-| bbtests.scripts.image | string | `"registry1.dso.mil/bigbang-ci/devops-tester:1.1.1"` |  |
+| bbtests.scripts.image | string | `"registry1.dso.mil/bigbang-ci/devops-tester:1.1.2"` |  |
 | bbtests.scripts.additionalVolumes[0].name | string | `"docker-config"` |  |
 | bbtests.scripts.additionalVolumes[0].secret.secretName | string | `"private-registry"` |  |
 | bbtests.scripts.additionalVolumes[0].secret.items[0].key | string | `".dockerconfigjson"` |  |
@@ -134,13 +134,14 @@ helm install nexus-repository-manager chart/
 | bbtests.scripts.additionalVolumeMounts[0].mountPath | string | `"/.docker/"` |  |
 | bbtests.scripts.envs.docker_host | string | `"nexus-nexus-repository-manager-docker-5000:5000"` |  |
 | bbtests.scripts.envs.docker_user | string | `"admin"` |  |
+| bbtests.scripts.envs.docker_host_tls_enabled | string | `"false"` |  |
 | bbtests.scripts.secretEnvs[0].name | string | `"docker_password"` |  |
 | bbtests.scripts.secretEnvs[0].valueFrom.secretKeyRef.name | string | `"nexus-repository-manager-secret"` |  |
 | bbtests.scripts.secretEnvs[0].valueFrom.secretKeyRef.key | string | `"admin.password"` |  |
 | statefulset | object | `{"enabled":false}` | End of BigBang Additions |
 | deploymentStrategy | string | `"Recreate"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/sonatype/nexus/nexus"` |  |
-| image.tag | string | `"3.74.0-05"` |  |
+| image.tag | string | `"3.88.0-08-4909530"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | nexus.affinity | object | `{}` |  |
@@ -156,12 +157,11 @@ helm install nexus-repository-manager chart/
 | nexus.repository.repo[0].repo_data.storage.blobStoreName | string | `"default"` |  |
 | nexus.repository.repo[0].repo_data.storage.strictContentTypeValidation | bool | `true` |  |
 | nexus.repository.repo[0].repo_data.storage.writePolicy | string | `"allow_once"` |  |
-| nexus.repository.repo[0].repo_data.cleanup.policyNames[0] | string | `"string"` |  |
 | nexus.repository.repo[0].repo_data.component.proprietaryComponents | bool | `true` |  |
 | nexus.repository.repo[0].repo_data.raw.contentDisposition | string | `"ATTACHMENT"` |  |
 | nexus.docker.enabled | bool | `false` |  |
 | nexus.env[0].name | string | `"INSTALL4J_ADD_VM_PARAMS"` |  |
-| nexus.env[0].value | string | `"-Dcom.redhat.fips=false -Xms2703M -Xmx2703M -XX:MaxDirectMemorySize=2703M -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport -Djava.util.prefs.userRoot=/nexus-data/javaprefs"` |  |
+| nexus.env[0].value | string | `"-Dcom.redhat.fips=false -Xms2703M -Xmx2703M -XX:MaxDirectMemorySize=2703M -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport -Djava.util.prefs.userRoot=/nexus-data/javaprefs -Dkaraf.data=/nexus-data"` |  |
 | nexus.env[1].name | string | `"NEXUS_SECURITY_RANDOMPASSWORD"` |  |
 | nexus.env[1].value | string | `"true"` |  |
 | nexus.properties.override | bool | `false` |  |

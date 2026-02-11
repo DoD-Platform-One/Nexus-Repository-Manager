@@ -15,23 +15,26 @@ describe('Basic Nexus', function() {
     
     // Try clicking sign in if we're not already on login page
     cy.get('body').then($body => {
-      if ($body.find('input[name="username"]').length === 0) {
+      if ($body.find('#username').length === 0) {
         // Click the first anchor which should be sign in
         cy.get('a').first().click({force: true})
         cy.wait(2000)
       }
     })
-    
+
     // Try to login if form is available
     cy.get('body').then($body => {
-      if ($body.find('input[name="username"]').length > 0) {
-        cy.get('input[name="username"]').type(Cypress.env('nexus_user'))
-        cy.get('input[name="password"]').type(Cypress.env('nexus_pass'))
-        cy.get('a[class="x-btn x-unselectable x-box-item x-toolbar-item x-btn-nx-primary-small"]').click()
-        cy.wait(2000)
+      if ($body.find('#username').length > 0) {
+        cy.get('#username').type(Cypress.env('nexus_user'))
+        cy.get('#password').type(Cypress.env('nexus_pass'))
+        cy.get('[data-testid="login-primary-button"]').click()
+        cy.wait(3000)
       }
     })
-    
+
+    // Wait for login to complete before navigating
+    cy.url({ timeout: 30000 }).should('not.include', '#login')
+
     cy.visit(`${Cypress.env('nexus_url')}/#admin/support/status`)
     cy.wait(3000) // Wait for page to load
     
